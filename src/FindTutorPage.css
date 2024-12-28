@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Inter';
+}
+/* Top Design */
+.top-design {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px; 
+}
+.graduation-cap {
+  display: flex;
+  justify-content: center;
+  margin: 16px auto; 
+}
+
+
+/* General Styles */
+.find-tutor-page {
+  max-width: 1200px;
+  margin: 95px auto 0;
+  padding: 20px;
+  color: #333;
+}
+.header h1 {
+  text-align: center;
+  color: #152F56; 
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal; 
+  letter-spacing: 0.216px;
+  margin-bottom: 30px;
+}
+
+/* Tutor Grid */
+.tutor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 144px;
+  margin-bottom: 20px;
+}
+
+.tutor-title-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  border-radius: 16px 16px 0 0;
+  border: 1px solid #214089;
+  background: #EFF3FC;
+  color: #152f56;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.096px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.tutor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 1292px; 
+  padding: 32px; 
+  align-self: stretch; 
+  border-radius: 8px; 
+  border: 1px solid #DFE5FB; 
+  background: #fff; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+
+
+.tutor-image {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.tutor-info {
+  display: flex;
+  align-items: flex-start; 
+  gap: 12px; 
+  width: 100%; 
+}
+
+
+
+.tutor-card h2 {
+  font-size: 16px;
+  color: #152F56; 
+  margin: 0; 
+  font-weight: 300; 
+  letter-spacing: 0.096px;
+  line-height: normal;
+}
+
+
+
+.tutor-name-and-taught {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%; 
+}
+
+
+.tutor-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; 
+  width: 100%;
+}
+
+/* Title styles */
+.tutor-card .title {
+  color: #152F56;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Taught text */
+.tutor-card .taught {
+  font-size: 14px;
+  font-weight:200;
+  color: #152F56;
+  letter-spacing: 0.084px;
+  margin: 0; 
+  text-align: right;
+  margin-left: auto;
+}
+
+
+/*rating*/
+.highest-rated {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  color: #152F56;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 32px;
+}
+
+.rating-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #DBEA34; 
+  font-size: 18px;
+  
+}
+
+.rating-number {
+  color: #152F56;
+  font-weight: 300;
+  font-size: 16px;
+}
+ 
+/*About*/
+.aboutHeading{
+  color: #152F56;
+text-align: center;
+font-size: 16px;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.096px;
+margin-top: 32px;
+}
+
+
+.tutor-card .about {
+  color: #152F56;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.096px;
+}
+
+.course{
+margin-top: 56px;
+color: #152F56;
+font-size: 16px;
+font-weight: 500;
+letter-spacing: 0.096px;
+}
+.courseType{
+  color: #152F56;
+font-size: 14px;
+font-style: normal;
+font-weight: 200;
+line-height: normal;
+letter-spacing: 0.084px;
+}
+.learn{
+  color: #152F56;
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+letter-spacing: 0.096px;
+margin-top: 24px;
+}
+ul {
+  padding-left: 0; 
+  margin: 10px 0;
+  list-style: none; 
+  margin-top: 32px;
+}
+
+li {
+  color: #152F56;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.096px;
+  margin-bottom: 24px;
+  padding-left: 0; 
+  position: relative;
+  display: flex;
+  align-items: center; 
+}
+
+
+
+li span {
+  margin-left: 10px; 
+}
+
+
+
+
+.register-btn {
+  display: flex;
+  width: 100%;
+  height: 44px;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #152F56 0%, #2E67BC 100%);
+  color: white; 
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer; 
+  border: none; 
+  margin-top: 30px;
+  margin-bottom: 22px;
+}
+
+.register-btn:hover {
+  background: linear-gradient(180deg, #2E67BC 0%, #152F56 100%); 
+}
+
+
+
+
+/* Reviews Section */
+
+.review-section {
+  max-width: 400px;
+  margin: auto;
+  border-top: 5px solid #A0C3F8;
+}
+.review-section h3 {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #152F56;
+font-weight: 400;
+line-height: normal;
+position: relative;
+margin-top: 25px;
+
+}
+.review-section p{
+  color: #152F56;
+font-size: 14px;
+font-weight: 400;
+line-height: normal;
+margin-top: 20px;
+}
+h3 i {
+  color: #ffffff; 
+  font-size: 15px;
+  display: flex;
+padding: 8px;
+justify-content: center;
+align-items: center;
+border-radius: 300px;
+background: linear-gradient(180deg, #152F56 0%, #2E67BC 100%);
+margin-right: 5px;
+}
+.review-section h3::after {
+  content: "";
+  position: absolute;
+  left: 38px;
+  bottom: 5px; 
+  width: 8%; 
+  height: 2px; 
+  background-color: #152F56; 
+}
+.ratings-stars {
+  display: flex;
+  margin: 10px 0;
+padding: 10px 24px;
+align-items: center;
+gap: 8px;
+border-radius: 4px;
+border: 1px solid #152F56;
+width: 50%;
+
+}
+.ratings-stars span {
+  font-size: 30px;
+  cursor: pointer;
+  color: #152F56;
+  font-weight:600;
+
+}
+.ratings-stars .filled {
+  color: #152F56; 
+}
+.ratings-stars .empty {
+  color: #ccc; 
+}
+.review-textarea {
+  width: 85%;
+  height: 70px;
+  display: flex;
+padding: 8px 24px 40px 8px;
+border-radius: 4px;
+border: 1px solid #152F56;
+color: #152F56;
+font-size: 10px;
+font-weight: 200;
+}
+.optional{
+  color: #152F56;
+font-size: 10px;
+font-weight: 100;
+line-height: normal;
+}
+
+
+
+
+.seeAll {
+  position: relative;
+font-weight: 300;
+margin-top: 28px;
+margin-bottom: 20px;
+  font-size: 12px;
+  color: #305FCD;
+  cursor: pointer;
+  text-decoration: none; 
+  display: inline-block; 
+  text-align: right; 
+  margin-left: auto; 
+}
+.seeAllContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.arrow {
+  position: absolute;
+  right: 1px; 
+  bottom: -20px; 
+  transition: transform 0.3s ease;
+}
+
+.seeAll:hover .arrow {
+  transform: translateX(5px); 
+}
+
+
+
+
+
+/* Responsive Design */
+/* General Mobile Styling */
+@media (max-width: 768px) {
+  .find-tutor-page {
+    padding: 10px;
+    margin-top: 20px;
+  }
+  .graduation-cap {
+    margin: 8px auto;
+  }
+  .graduation-cap svg {
+    width: 40px;
+    height: 40px;
+  }
+  .desktop-heading{
+    display: none;
+  }
+  .mobile-heading{
+    display: block;
+  }
+  .header h1 {
+    font-size: 28px; 
+    margin-bottom: 20px;
+  }
+
+  .tutor-grid {
+    grid-template-columns: 1fr; 
+    gap: 40px;
+  }
+
+  .tutor-card {
+    height: auto; 
+    padding: 16px; 
+    
+  }
+
+
+  .tutor-info {
+    flex-direction: column; 
+    align-items: center; 
+    gap: 8px;
+  }
+
+  .tutor-image {
+    width: 50px;
+    height: 50px;
+  }
+  .tutor-card .title{
+  margin-top: 10px;
+}
+  .tutor-name-and-taught {
+    flex-direction: column;
+    text-align: center;
+  }
+  .tutor-card .taught {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -60px;
+  }
+  .tutor-details {
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tutor-card h2 {
+    font-size: 14px; 
+  }
+
+  .highest-rated {
+    flex-direction: row;
+    justify-content: center;
+    gap:6px;
+    margin-top: 50px;
+  }
+
+  .rating-stars {
+    font-size: 16px; 
+  }
+
+  .rating-number {
+    font-size: 14px;
+  }
+
+  .aboutHeading {
+    font-size: 14px;
+     margin-left: auto;
+  margin-right: auto;
+  }
+
+  .tutor-card .about {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align:center;
+  }
+
+  .learn {
+    font-size: 14px;
+     margin-left: auto;
+  margin-right: auto;
+  }
+
+  ul {
+    margin-top: 16px;
+  }
+
+  li {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .course {
+    font-size: 14px;
+     margin-left: auto;
+  margin-right: auto;
+  }
+
+  .courseType {
+    font-size: 12px;
+     margin-left: auto;
+  margin-right: auto;
+  }
+
+  
+  .register-btn {
+    font-size: 14px;
+    padding: 12px 24px;
+    width: 50%;
+     margin-left: auto;
+  margin-right: auto;
+  }
+  .ratings-stars span {
+    font-size: 18px;
+  }
+  
+  .seeAll {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .arrow {
+    right: 17px; 
+    bottom: -5px; 
+    
+  }
+  .seeAllContainer {
+    text-align: center;
+  }
+}
+
+
+/* Mobile Landscape Mode */
+@media (max-width: 1024px) {
+  .find-tutor-page {
+    padding: 15px;
+  }
+
+  .tutor-card {
+    padding: 20px;
+  }
+}
+
+
