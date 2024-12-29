@@ -11,6 +11,8 @@ const tutorSchema = new mongoose.Schema({
     uniqueTrait: { type: String },
     syllabus: { type: String },
     cv: { type: String },
+    isVerified: { type: Boolean, default: false },
+    verificationToken: { type: String },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Tutor', tutorSchema);
