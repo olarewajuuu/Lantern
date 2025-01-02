@@ -52,13 +52,13 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-20 top-0">
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+    <nav className="fixed top-0 z-20 w-full bg-white shadow-md">
+      <div className="container flex items-center justify-between px-6 py-4 mx-auto vlg:py-[0]">
         {/* Logo */}
         <div><img src={logo} alt="" /></div>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-12 items-center">
+        <ul className="items-center hidden space-x-12 vlg:flex">
           <li
             className={`cursor-pointer ${activeLink === "How to Start your Tech Career"
               ? "bg-[#DBD6F569] font-semibold px-4 py-2 rounded-[25px]"
@@ -95,9 +95,9 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu Icon */}
-        <div className="md:hidden flex items-center">
+        <div className="flex items-center vlg:hidden">
           <button onClick={toggleMenu}>
-            {isOpen ? <img src={openmenu} alt="" className="h-6 w-6" /> : <img src={openmenu} alt="" className="h-6 w-6" />}
+            {isOpen ? <img src={openmenu} alt="" className="w-6 h-6" /> : <img src={openmenu} alt="" className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -106,12 +106,12 @@ const Navbar = () => {
       {isOpen && (
         <div
           ref={menuRef}
-          className="fixed top-0 right-0 h-full w-3/4 bg-gray-50 shadow-lg z-30 transform transition-transform"
+          className="fixed top-0 right-0 z-30 w-3/4 h-full transition-transform transform shadow-lg bg-gray-50"
         >
           <div className="flex items-center justify-between px-6 py-4 border-b">
             <div><img src={mobilelogo} alt="" /></div>
             <button onClick={toggleMenu}>
-              <img src={closemenu} alt="" className="h-6 w-6" />
+              <img src={closemenu} alt="" className="w-6 h-6" />
             </button>
           </div>
           <ul className="flex flex-col p-6 space-y-6">
@@ -150,7 +150,7 @@ const Navbar = () => {
               <img src={testimonial} alt="" />
               <span>Testimonials</span>
             </li>
-            <li className="w-full flex flex-col justify-center">
+            <li className="flex flex-col justify-center w-full">
               <button className="bg-gradient-to-b from-[#152F56] w-full to-[#2E67BC] text-white font-bold py-2 px-6 rounded-[25px]">
                 Join Community
               </button>
