@@ -1,13 +1,15 @@
-import FindTutorPage from "../../FindTutorPage"
-import Testimonials from "../../Testimonials"
+import FindTutorPage from "../../FindTutorPage";
+import Homepage from "../../frontend/modules/Hompage/Homepage";
+import Testimonials from "../../Testimonials";
 
 const Body = () => {
   return (
     <div>
-     <FindTutorPage />
-     <Testimonials/>
+      <Homepage />
+      <FindTutorPage />
+      <Testimonials />
     </div>
-  )
-}
+  );
+};
 
-export default Body
+export default Body;
