@@ -4,7 +4,7 @@ import HeroPic from "../../../../public/hero.png";
 import TopDesign from "../../../layout/header/TopDesign";
 import Circle from "../../components/icons/circle";
 import EmptyCircle from "../../components/icons/empty_circle";
-import { list_data } from "../../utils/data";
+import { courses, list_data } from "../../utils/data";
 import FaceShadow from "../../../../public/face_shadow";
 
 export default function Homepage() {
@@ -98,10 +98,51 @@ export default function Homepage() {
       {/* third screen */}
       <div className="bg-[#F3F1FC]">
         <TopDesign />
-        <div className="px-[1.5rem]">
-          <div>
-            <FaceShadow />
-            <h1>Our Courses/Classes</h1>
+        <div className="flex flex-col px-[1.5rem] py-[2rem] md:pb-[3rem] md:space-y-[3rem] space-y-[2rem]">
+          <h1 className="space-y-[5px] flex flex-col items-center">
+            <span className="md:*:h-[94px] md:*:w-[96px]">
+              <FaceShadow />
+            </span>
+            <span className="font-semibold text-darkBlue text-[1.5rem] md:text-[2rem] lg:text-[3rem]">
+              Our Courses/Classes
+            </span>
+          </h1>
+
+          <div className="flex flex-col space-y-[2rem] lg:mx-auto lg:max-w-[950px] lg:space-y-0 lg:grid lg:grid-cols-2 lg:[grid-gap:4rem]">
+            {courses.map((data, i) => (
+              <div
+                key={i}
+                className="mx-auto max-w-[402px] lg:mx-0 lg:max-w-[none]  flex space-x-[8px] p-[1.5rem] pl-[1rem] rounded-[1rem] bg-[#F1F4F9] border-[1px] border-[#D7E5FB]"
+              >
+                <img
+                  src={`./${data.path}`}
+                  className="w-[40px] h-[40px]"
+                  alt=""
+                />
+                <div className="space-y-[0.5rem]">
+                  <h1 className="text-darkBlue flex items-center text-[1.2rem]  md:text-[1.5rem] font-medium">
+                    {data.title}
+                  </h1>
+                  <div className="space-y-[20px]">
+                    <p className="text-[1rem] text-darkBlue font-light">
+                      {data.text}
+                    </p>
+
+                    <div className="flex space-x-[1rem] items-center">
+                      <div className="text-[#6D7D95] hidden md:block">
+                        {data.subText}
+                      </div>
+                      <button className="flex  justify-center items-center space-x-[4px] text-[0.75rem] w-[127px] h-[31px] rounded-[24px] bg-[#F5F8FD] text-[#8594AA] border-[1px] border-[#152f5680]">
+                        <span>Learn more</span>
+                        <span>
+                          <img src="./arrowRight.svg" alt="" />
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

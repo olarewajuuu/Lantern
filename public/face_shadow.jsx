@@ -2,9 +2,8 @@ export default function FaceShadow() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="96"
-      height="94"
-      className="max-[600px]:h-[24px] max-[600px]:w-[24px]"
+      width="40"
+      height="40"
       fill="none"
       viewBox="0 0 96 94"
     >
