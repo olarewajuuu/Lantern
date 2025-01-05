@@ -11,7 +11,7 @@ export default function Homepage() {
   return (
     <>
       <div className="mt-[78px] vlg:mt-[106px] bg-[#F3F1FC]">
-        <div className="flex flex-col md:max-w-[700px] mx-auto vlg:max-w-[1001px]">
+        <div id="hero" className="flex flex-col md:max-w-[700px] mx-auto vlg:max-w-[1001px]">
           <div className="pt-[2rem] px-[1.5rem] md:pt-[3rem] md:text-center md:flex md:flex-col md:items-center ">
             <h1 className="text-darkBlue text-[2rem] leading-[44px] font-bold md:text-[2.5rem] vlg:text-[3.25rem] vlg:leading-[60.6px]">
               Experienced Tutors That Help You Master In-Demand Skills
@@ -98,7 +98,7 @@ export default function Homepage() {
       {/* third screen */}
       <div className="bg-[#F3F1FC]">
         <TopDesign />
-        <div className="flex flex-col px-[1.5rem] py-[2rem] md:pb-[3rem] md:space-y-[3rem] space-y-[2rem]">
+        <div id="courses" className="flex flex-col px-[1.5rem] py-[2rem] md:pb-[3rem] md:space-y-[3rem] space-y-[2rem]">
           <h1 className="space-y-[5px] flex flex-col items-center">
             <span className="md:*:h-[94px] md:*:w-[96px]">
               <FaceShadow />

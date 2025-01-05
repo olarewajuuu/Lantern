@@ -61,7 +61,7 @@ const FindTutorPage = () => {
   };
 
   return (
-    <div className="find-tutor-page">
+    <div id="find-tutor" className="find-tutor-page">
       <TopDesign />
       <div className="graduation-cap">
       <img src={Graduation} alt="graduation cap" />
