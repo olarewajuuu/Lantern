@@ -3,49 +3,301 @@ import "./FindTutorPage.css";
 import TopDesign from "./layout/header/TopDesign";
 import { useState } from "react";
 import Graduation from '../public/graduationcap.svg';
+import DamiPics from "../public/dami.png";
+import oluPics from "../public/olumide.png";
+import ochayiPics from "../public/ochayi.png";
+import temiPics from "../public/temi.png";
+import maryPics from "../public/mary.png";
+import temilehinPics from "../public/temilehin.png";
+import anuPics from "../public/anu.png";
+import ayoPics from "../public/ayodele.png";
+import bamidelePics from "../public/bamidele.png";
+import adesewaPics from "../public/adesewa.png";
+import dayoPics from "../public/dayo.png";
+import busolaPics from "../public/busola.png";
+import natPics from "../public/nat.png";
+
 
 const tutors = [
   {
-    heading: "Digital Marketing Tutors",
-    name: "Abigail Ademola", 
-    image: "https://randomuser.me/api/portraits/women/1.jpg", 
+    heading: "Front-end Dev Tutors",
+    name: "Damilare   ", 
+    image: DamiPics, 
     students: "198",
-    position: "Digital Marketing Tutor",
+    position: "Front-end Dev Tutor",
     rating: "5/5",
     reviews: "123",
     about:
-      "I'm Abigail, a digital marketing expert with 5+ years of experience. I mentor beginners, helping them build practical skills for real-world marketing success.",
-    course: "Digital marketing course",
+      "I’m Damilare, I’m a front-end dev with years of experience. I mentor beginners, helping them build practical skills for real-world desktop and mobile web",
+    course: "Front-end Dev",
     type:"online classes only",
     learn: [
       "No prior experience needed it's perfect for beginners.",
-      "Master social media marketing for Facebook, TikTok, Twitter, SEO, and online ads.",
-      "Learn how to promote brands and businesses online.",
-      "Get skills that can lead to jobs in marketing or freelancing.",
+      "Master HTML, CSS, and JavaScript to build visually stunning and responsive websites.",
+      "Learn to work with modern front-end frameworks like React and Vue for dynamic web applications.",
+      "Get skills that can lead to jobs as a front-end developer.",
       "Earn a certificate.",
     ],
       },
   {
     heading: "Software Engineering Tutors",
-    name: "Jude Amabu",
-    image: "https://randomuser.me/api/portraits/men/1.jpg",
+    name: "Olumide     ",
+    image: oluPics,
     students: "144",
     position: "Software Engineering Tutor",
     rating: "5/5",
     reviews: "113",
     about:
-      "I am Jude, a software engineer with 6 years of experience. My students have built real-world apps and landed remote roles at top tech companies.",
+      "I am Olumide, a software engineer. My students have built real-world apps and its infrastructure and landed remote roles at top tech companies",
     course: "Software engineering course",
     type: "online and physical classes",
     learn: [
       "Learn how to build apps and websites from scratch.",
       "No coding experience needed we'll teach you step by step.",
-      "Master popular coding languages like HTML, CSS, and JavaScript.",
+      "Master popular coding languages like HTML, CSS, JavaScript and Python.",
       "Prepare for jobs like web developer or software engineer.",
       "Earn a certificate.",
     ],
   },
-  
+  {
+    heading: "UX/UI Design & Copywriting Tutors",
+    name: "Ochayi    ",
+    image: ochayiPics,
+    students: "188",
+    position: "UX/UI design & Copy-Writing Tutor",
+    rating: "5/5",
+    reviews: "109",
+    about:
+      "I’m Ochayi, a creative UI/UX designer & Copywriter. My students have mastered UX/UI design and Copy-writing, leading to roles in UX/UI design and Copy writing.",
+    course: "UX/UI design & Copy-Writing course",
+    type: "online classes only",
+    learn: [
+      "No design experience needed – it’s beginner-friendly ",
+      "Understand the basics of user experience (UX) and user interface (UI) design & Copywriting",
+      "Master Ux research and how to create apps and website using tools like figma",
+      "Get my 2025 secret tips to get jobs in UI/UX design or creative tech roles or copywriting.",
+      "Earn a certificate.",
+    ],
+  },
+  {
+    heading: "Virtual Assistant Tutors",
+    name: "Temitope     ",
+    image: temiPics,
+    students: "212",
+    position: "Virtual Assistant Tutor",
+    rating: "5/5",
+    reviews: "179",
+    about:
+      "I’m Temitope,  an experienced virtual assistant working remotely for a UK company. I teach and  help my students gain remote work skills and secure international VA jobs.",
+    course: "Virtual Assistant course",
+    type: "online and physical classes",
+    learn: [
+      "Learn how to assist businesses with online tasks like scheduling and emails",
+      "Master basic tools like Google Workspace and Microsoft Office.",
+      "Improve your communication and organizational skills",
+      "Great for remote work and freelancing opportunities.",
+      "Earn a certificate.",
+    ],
+  },
+  {
+    heading: "IELTS Tutors",
+    name: "Olumide     ",
+    image: oluPics,
+    position: "IELTS Coordinator ",
+    rating: "5/5",
+    reviews: "99",
+    about:
+      "I’m Olumide, an IELTS coach focused on helping students improve their English skills. My students have successfully scored high IELTS score 99% of the time.",
+    course: "IELTS course",
+    type: "online classes only",
+    learn: [
+      "Learn the structure of IELTS reading, writing, listening and speaking sections ",
+      "Practice English skills for study, work or migration ",
+      "Improve pronunciation, vocabulary and comprehension",
+      "Work on realistic IELTS practice tests to prepare you for the exams",
+      "Achieve your desired result.",
+    ],
+  },
+  {
+    heading: "GRE/GMAT Tutors",
+    name: "Anuoluwapo     ",
+    image: anuPics,
+    students: "324",
+    position: "GRE/GMAT Tutor",
+    rating: "5/5",
+    reviews: "234",
+    about:
+      "I’m Anuoluwapo, a GRE/GMAT expert. I help students master GMAT exams, guiding my students to top schools worldwide ",
+    course: "GMAT course",
+    type: "online classes only",
+    learn: [
+      "Develop critical skills for solving GMAT questions",
+      "Practice with GMAT mock tests to gain familiarity",
+      "Receive tips to manage time and answer questions efficiently ",
+      "Ideal for those interested in pursuing a degree abroad",
+      "Achieve your desired result.",
+    ],
+  },
+  {
+    heading: "Back-end Tutors",
+    name: "Nathaniel  ",
+    image: natPics,
+    students: "121",
+    position: "Back-end Tutor",
+    rating: "5/5",
+    reviews: "99",
+    about:
+      "I’m Nathaniel, a backend developer who built backend infrastructure for many tech companies.",
+    course: "Back-end Dev course",
+    type: "online classes only",
+    learn: [
+      "Its beginner friendly, anyone can apply",
+      "Learn server-side programming languages like Node.js, Python, and Ruby to create robust web applications.",
+      "Understand databases and the fundamentals of API development, RESTful services, and connecting the front-end to back-end systems.",
+      "Get unlocked strategies on how to secure back-end jobs with tech start-ups",
+      "Earn a certificate.",
+    ],
+  },
+  {
+    heading: "Data Science Tutors",
+    name: "Mary    ",
+    image: maryPics,
+    students: "324",
+    position: "Data Science Tutor",
+    rating: "5/5",
+    reviews: "234",
+    about:
+      "I’m Mary, a Data Scientist with years of experience. I help students master data science, guiding my students to getting jobs in tech companies.  ",
+    course: "Data Science course",
+    type: "online classes only",
+    learn: [
+      "Its beginner friendly, anyone can enroll.Its beginner friendly, anyone can enroll.",
+      "Learn to manipulate and analyze large datasets using Python libraries like Pandas, NumPy, and Matplotlib.",
+      "Develop skills in statistical analysis and hypothesis testing to draw insights from data",
+      "Get my 2025 hidden strategies how to secure a job.",
+      "Earn a certificate.",
+    ],
+  },
+  {
+    heading: "UI Design Tutors",
+    name: "Adesewa   ",
+    image: adesewaPics,
+    students: "121",
+    position: "UI Design Tutor",
+    rating: "5/5",
+    reviews: "99",
+    about:
+      "I’m Adesewa, a creative UI design, with years of experience. I can’t wait to have you as my student.",
+    course: "UI Design course",
+    type: "online classes only",
+    learn: [
+      "Its beginner friendly. Anyone can enroll. ",
+      "Master design principles, such as layout, typography, and color theory, to create visually appealing user interfaces.",
+      "Learn to use design tools like Figma, Sketch, and Adobe XD to bring your designs to life",
+      "Get tips on how to get jobs as a UI Designer",
+      "Earn a certificate.",
+    ],
+  },
+  {
+    heading: "Project Management Tutors",
+    name: "Busola    ",
+    image: busolaPics,
+    students: "324",
+    position: "Project Management Tutor",
+    rating: "5/5",
+    reviews: "234",
+    about:
+      "I’m Busola, a project manager with many project under my belt. My ex-students are now project managers in top companies.",
+    course: "Project Management course",
+    type: "online classes only",
+    learn: [
+      "Its beginner friendly, anyone can enroll.",
+      "Master project management methodologies such as Agile, Scrum, and Waterfall to efficiently deliver projects on time and within budget",
+      "Learn how to create comprehensive project plans, set clear goals, define project scope, and allocate resources effectively.",
+      "Get my 2025 tips on how to get jobs.",
+      "Archieve your desired result",
+    ],
+  },
+  {
+    heading: "Product Design Tutors",
+    name: "Bamidele     ",
+    image: bamidelePics,
+    students: "121",
+    position: "Product Design Tutor",
+    rating: "5/5",
+    reviews: "99",
+    about:
+      "I’m Bamidele, a creative product designer, with years of experience. I can’t wait to have you as my student.",
+    course: "Product Design course",
+    type: "online classes only",
+    learn: [
+      "I’m Bamidele, a creative product designer, with years of experience. I can’t wait to have you as my student.",
+      "Master design principles, such as layout, typography, and color theory, to create visually appealing user interfaces.",
+      "Learn to use design tools like Figma, Sketch, and Adobe XD to bring your designs to life",
+      "Get tips on how to get jobs as a product Designer",
+      "Earn a certificate.",
+    ],
+  },
+  {
+    heading: "Cybersecurity Tutors",
+    name: "Ayodele    ",
+    image: ayoPics,
+    students: "324",
+    position: " Tutor",
+    rating: "5/5",
+    reviews: "234",
+    about:
+      "I’m Ayodele, cybersecurity expert with multiple certification and years of experience.",
+    course: "course",
+    type: "online classes only",
+    learn: [
+      "Anyone can apply, its beginner friendly.",
+      "Understand the fundamentals of cybersecurity, including risk assessment, encryption, and data protection.",
+      "Learn to identify and respond to various types of cyber threats, such as malware, phishing, and hacking techniques",
+      "Get mentorship for how to get jobs.",
+      "Earn a certificate.",
+    ],
+  },
+  {
+    heading: "Front-end Dev Tutors",
+    name: "Dayo   ",
+    image:dayoPics,
+    students: "198",
+    position: "Front-end DevTutor",
+    rating: "5/5",
+    reviews: "123",
+    about:
+      "I’m Dayo, I’m a front-end dev with years of experience. I mentor beginners, helping them build practical skills for real-world desktop and mobile web",
+    course: "Front-end Dev",
+    type: "online classes only",
+    learn: [
+      "No prior experience needed – it’s perfect for beginners.  ",
+      "Master HTML, CSS, and JavaScript to build visually stunning and responsive websites.",
+      "Learn to work with modern front-end frameworks like React and Vue for dynamic web applications.",
+      "Get skills that can lead to jobs as a front-end developer.",
+      "Earn a certificate.",
+    ],
+  },
+  {
+    heading: "Network Engineering Tutors",
+    name: "Temilehin ",
+    image: temilehinPics,
+    students: "324",
+    position: "Network Engineering Tutor",
+    rating: "5/5",
+    reviews: "234",
+    about:
+      "I’m Temilehin, a network engineer with multiple certifications and years of experience managing network systems.",
+    course: "Network Engineering course",
+    type: "online and physical classes",
+    learn: [
+      "Perfect for beginners, anyone can enroll.",
+      "Master networking concepts like IP addressing, subnets, and routing to build and maintain secure networks",
+      "Gain experience in setting up and managing network protocols like TCP/IP, DNS, and DHCP",
+      "Get tips how how to get jobs in 2025.",
+      "Earn a certificate.",
+    ],
+  },
 ];
 
 const FindTutorPage = () => {
@@ -131,7 +383,7 @@ const FindTutorPage = () => {
 </ul>
 
 
-  <button className="register-btn">Register</button>
+  <button className="register-btn">I’m Picking You</button>
 
   <hr/>
  
@@ -157,13 +409,13 @@ const FindTutorPage = () => {
         <button className="register-btn submit-btn">Submit</button>
     </div>
 </div>
-<div className="seeAllContainer">
+{/* <div className="seeAllContainer">
 <button className="seeAll"> See all {tutor.heading}
 <svg xmlns="http://www.w3.org/2000/svg" width="90" height="16" viewBox="0 0 90 16" fill="none" className="arrow">
     <path d="M89.7071 8.70711C90.0976 8.31658 90.0976 7.68342 89.7071 7.29289L83.3431 0.928932C82.9526 0.538408 82.3195 0.538408 81.9289 0.928932C81.5384 1.31946 81.5384 1.95262 81.9289 2.34315L87.5858 8L81.9289 13.6569C81.5384 14.0474 81.5384 14.6805 81.9289 15.0711C82.3195 15.4616 82.9526 15.4616 83.3431 15.0711L89.7071 8.70711ZM0 9H89V7H0V9Z" fill="#305FCD"/>
   </svg>
 </button>
-</div>
+</div> */}
           </div>
         ))}
       </div>
