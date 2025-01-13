@@ -1,9 +1,9 @@
 const express = require('express');
-const { submitTutorForm, verifyTutorEmail } = require('../controllers/tutorController');
+const { submitTutorForm } = require('../controllers/tutorController');
+const upload = require('../utils/fileUpload'); 
+
 const router = express.Router();
 
-
-router.post('/submit', submitTutorForm);
-router.get('/verify-tutor', verifyTutorEmail);
-
+// Validate tutor form on submission
+router.post('/submit', upload.fields([{ name: 'syllabus' }, { name: 'cv' }]), submitTutorForm);
 module.exports = router;

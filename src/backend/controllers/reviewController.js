@@ -8,10 +8,8 @@ exports.submitReview = async (req, res) => {
             return res.status(400).json({ error: 'Message is required' });
         }
         // new reviews associated with the authennticated user
-        const review = await Review.create({ 
-            message,
-            user: req.user.id,
-        });
+        const review = await Review.create({ mesage });
+        await review.save();
         
         res.status(201).json({ message: 'Review Submitted', review });
     } catch (error) {

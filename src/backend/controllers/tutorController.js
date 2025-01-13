@@ -1,20 +1,30 @@
 const Tutor = require('../models/Tutor');
-const sendEmail = require('../config/email');
-const generateToken = require('../utils/generateToken');
 
 
 exports.submitTutorForm = async (req, res) => {
     try {
-        const tutor = await Tutor.create(req.body);
-        tutor.verificationToken = generateToken();
+        const { fullname, phone, email, cousre, portfolio, courseDuration, proposedFee, uniqueAboutYou } = req.body;
+        const { syllabus, cv } = req.files; // file upload
+        
+        if (!fullname || !phone || !email || !course || !courseDuration || !proposedFee || !uniqueAboutYou) {
+            return res.status(400).json({ error: 'All required fields must be filled.' });
+        }
+
+        const tutor = new Tutor({
+            fullname,
+            phone,
+            email,
+            course,
+            portfolio: portfolio || null,
+            courseDuration,
+            proposedFee,
+            uniqueAboutYou,
+            syllabus: syllabus[0].path,
+            cv: cv[0].path,
+        });
+
         await tutor.save();
 
-        const verificationLink = `${process.env.FRONTEND_URL}/verify-tutor?token=${tutor.verificationToken}`;
-        await sendEmail(tutor.email, 'Tutor Email Verification', `
-            <h3>Verify Your Email</h3>
-            <p>Please click the link below to verify your email:</p>
-            <a href="${verificationLink}">${verificationLink}</a>
-        `);
         res.status(201).json({ message: 'Tutor form submitted', tutor });
     } catch (error) {
         res.status(400).json({ error: error.message });

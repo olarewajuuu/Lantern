@@ -6,13 +6,11 @@ const tutorSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     course: { type: String, required: true },
     portfolio: { type: String },
-    duration: { type: String, required: true },
-    fee: { type: Number, required: true},
-    uniqueTrait: { type: String },
+    courseDuration: { type: String, required: true },
+    proposedFee: { type: Number, required: true},
+    uniqueAboutYou: { type: String },
     syllabus: { type: String },
     cv: { type: String },
-    isVerified: { type: Boolean, default: false },
-    verificationToken: { type: String },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Tutor', tutorSchema);

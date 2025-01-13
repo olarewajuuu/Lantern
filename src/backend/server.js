@@ -1,24 +1,25 @@
-require('dotenv').config();
 const express = require('express');
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const connectDB = require('./config/db');
+const reviewRoutes = require('./routes/reviewRoutes');
+const tutorRoutes = require('./routes/tutorRoutes');
+const studentRoutes = require('./routes/studentRoutes');
+const cors = require('cors');
 
-
-// we initialize the app
+dotenv.config();
 const app = express();
 
-// middleware to parse JSON requests
+app.use(cors());
 app.use(express.json());
+app.use('/uploads', express.static('uploads')); // Serve static files
 
-// connect to mongoDB
-connectDB();
+app.use('/api/reviews', reviewRoutes);
+app.use('/api/tutors', tutorRoutes);
+app.use('/api/students', studentRoutes);
 
-// middleware 
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/review', require('./routes/reviewRoutes'));
-app.use('/api/tutor', require('./routes/tutorRoutes'));
-
-
-// start the server
-const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
+mongoose
+    .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        app.listen(process.env.PORT || 5000, () => console.log('Server running on port 5000'));
+    })
+    .catch(err => console.log(err));
