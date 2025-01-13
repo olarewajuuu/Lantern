@@ -425,69 +425,42 @@ margin-bottom: 20px;
     
   }
 
-
-  .tutor-info {
-    flex-direction: column; 
-    align-items: center; 
-    gap: 8px;
+  .tutor-card .title {
+    font-size: 12px;
+    word-break: break-word;
   }
-
-  .tutor-image {
-    width: 50px;
-    height: 50px;
+  
+  .tutor-card h2, .tutor-card .taught {
+    font-size: 12px;
   }
-  .tutor-card .title{
-  margin-top: 10px;
-}
-  .tutor-name-and-taught {
-    flex-direction: column;
-    text-align: center;
-  }
-  .tutor-card .taught {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: -60px;
-  }
-  .tutor-details {
-    align-items: center;
-    gap: 8px;
-  }
-
-  .tutor-card h2 {
-    font-size: 14px; 
-  }
+  
 
   .highest-rated {
-    flex-direction: row;
-    justify-content: center;
-    gap:6px;
-    margin-top: 50px;
+    font-size: 13px;
+    gap:8px;
   }
 
   .rating-stars {
-    font-size: 16px; 
+    font-size: 12px; 
   }
 
   .rating-number {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .aboutHeading {
     font-size: 14px;
-     margin-left: auto;
-  margin-right: auto;
+    padding-bottom: 10px;
   }
 
   .tutor-card .about {
     font-size: 14px;
     line-height: 1.5;
-    text-align:center;
+    text-align:left;
   }
 
   .learn {
     font-size: 14px;
-     margin-left: auto;
-  margin-right: auto;
   }
 
   ul {
@@ -501,19 +474,16 @@ margin-bottom: 20px;
 
   .course {
     font-size: 14px;
-     margin-left: auto;
-  margin-right: auto;
   }
 
   .courseType {
     font-size: 12px;
-     margin-left: auto;
-  margin-right: auto;
+
   }
 
   
   .register-btn {
-    font-size: 14px;
+    font-size: 10px;
     padding: 12px 24px;
     width: 50%;
      margin-left: auto;

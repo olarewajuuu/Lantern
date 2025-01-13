@@ -2,43 +2,49 @@ import React from 'react';
 import './Testimonials.css';
 import TopDesign from './layout/header/TopDesign';
 import PeopleIcon from '../public/people.svg';
+import kazPics from "../public/kaz.png";
+import joyPics from "../public/joy.png";
+import isaacPics from "../public/isaac.png";
+import odunPics from "../public/odun.png";
+import bummiPics from "../public/bummi.png";
+import gbemiPics from "../public/gbemi.png";
 
 const testimonials = [
   {
-    name: 'Tola. A',
-    text: 'I had no tech background, the tutors made it so easy to learn, I am building my first app now',
+    name: 'Kazeem',
+    text: 'A great score in my GRE EXAM which helped me secured a scholarship all thanks to the instructor i met via LANTERN',
     date: '3hrs ago',
-    img: 'https://randomuser.me/api/portraits/women/3.jpg', // Replace with actual image paths
+    img: kazPics, 
   },
   {
-    name: 'Zainab Adams',
-    text: 'This platform change my life. After completing the virtual assistant course, I got a job with a UK company, I can now take good care of my mom and dad',
+    name: 'Joy',
+    text: 'I was so naive at first, been a first time techie, but with Lantern i became confident, the mentorship sessions with my instructor really helped me',
     date: 'October 13, 2024',
-    img: 'https://randomuser.me/api/portraits/women/8.jpg',
+    img: joyPics,
   },
   {
-    name: 'Emeka. E',
-    text: 'Learning from real professionals on this platform helped land my first job as a software engineer with a European Start-up, the mentorship was amazing',
+    name: 'Isaac',
+    text: 'Lantern will always be a platform i can recommend any day, any time, their attention to details and readiness to see you through your class journey is awesome',
     date: '18hrs ago',
-    img: 'https://randomuser.me/api/portraits/men/2.jpg',
+    img: isaacPics,
   },
   {
-    name: 'Ngozi',
-    text: 'Thanks to this platform, I now work at a top digital marketing company in Lagos as a digital marketer',
+    name: 'Odunayo',
+    text: 'At Lantern i’m forever thankful to their team, i had my training on Fronted development with them, they helped me secured a paid internship and today, i’m gainfully employed as a software engineer',
     date: 'November 12, 2024',
-    img: 'https://randomuser.me/api/portraits/women/5.jpg',
+    img: odunPics,
   },
   {
-    name: 'Chioma Udeze',
-    text: 'The flexible learning schedule allows me to learn at my own pace, I am confident of starting a new career as a UX/UI designer',
+    name: 'Oluwabunmi',
+    text: 'I’m in the United Kingdom, but LANTERN is the best platform you can source for a top IELTS tutor, i was able to make band 8.0 in my last exams',
     date: 'November 24, 2024',
-    img: 'https://randomuser.me/api/portraits/women/6.jpg',
+    img: bummiPics,
   },
   {
-    name: 'Bisi Ademola',
-    text: 'I was tired of jumping from one job to another. I now work as a data analyst and I love what I do',
+    name: 'Gbemi',
+    text: 'I came across LANTERN formerly HITA on IG, i reached out to them for my data analysis classes, i was assigned to my instructor. One thing i love this platform for is their expertise and professionalism',
     date: 'December 8, 2024',
-    img: 'https://randomuser.me/api/portraits/men/8.jpg',
+    img: gbemiPics,
   },
 ];
 
@@ -57,8 +63,10 @@ const Testimonials = () => {
             <div className="user-info">
               <img src={testimonial.img} alt={testimonial.name} className="user-image" />
               <h3>{testimonial.name}</h3>
+         
             </div>
-            <p>"{testimonial.text}"</p>
+            <hr/>
+            <p>“{testimonial.text}”</p>
             <span>{testimonial.date}</span>
           </div>
         ))}
