@@ -16,6 +16,8 @@ import adesewaPics from "../public/adesewa.png";
 import dayoPics from "../public/dayo.png";
 import busolaPics from "../public/busola.png";
 import natPics from "../public/nat.png";
+import olumidePics from "../public/olumideIELTS.png";
+
 
 
 const tutors = [
@@ -102,7 +104,7 @@ const tutors = [
   {
     heading: "IELTS Tutors",
     name: "Olumide     ",
-    image: oluPics,
+    image: olumidePics,
     position: "IELTS Coordinator ",
     rating: "5/5",
     reviews: "99",
@@ -243,12 +245,12 @@ const tutors = [
     name: "Ayodele    ",
     image: ayoPics,
     students: "324",
-    position: " Tutor",
+    position: "Cybersecurity Tutor",
     rating: "5/5",
     reviews: "234",
     about:
       "I’m Ayodele, cybersecurity expert with multiple certification and years of experience.",
-    course: "course",
+    course: "Cybersecurity course",
     type: "online classes only",
     learn: [
       "Anyone can apply, its beginner friendly.",
