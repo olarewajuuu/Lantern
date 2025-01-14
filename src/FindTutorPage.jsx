@@ -9,8 +9,7 @@ import ochayiPics from "../public/ochayi.png";
 import temiPics from "../public/temi.png";
 import maryPics from "../public/mary.png";
 import temilehinPics from "../public/temilehin.png";
-// import anuPics from "../public/anu.png";
-import anuPics from "../public/Anu.png"
+import anuPics from "../public/anu.png"
 import ayoPics from "../public/ayodele.png";
 import bamidelePics from "../public/bamidele.png";
 import adesewaPics from "../public/adesewa.png";
