@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import Modal from "react-modal";
+Modal.setAppElement("#root");
 import logo from "/logo.svg"
 import openmenu from "/openmenu.svg"
 import closemenu from "/closemenu.svg"
@@ -9,6 +11,7 @@ import course from "/course.svg"
 import tutor from "/tutor.svg"
 import becometutor from "/becometutor.svg"
 import testimonial from "/testimonial.svg"
+import StudentDetailsForm from "../../StudentDetailsForm";
 
 
 
@@ -50,6 +53,16 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen]);
+
+
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
+
+
 
   return (
     <nav className="fixed top-0 z-20 w-full bg-white shadow-md">
@@ -151,9 +164,21 @@ const Navbar = () => {
               <span>Testimonials</span>
             </li>
             <li className="flex flex-col justify-center w-full">
-              <button className="bg-gradient-to-b from-[#152F56] w-full to-[#2E67BC] text-white font-bold py-2 px-6 rounded-[25px]">
-                Join Community
-              </button>
+              <div>
+                <button onClick={() => {
+                  console.log("Opening modal...");
+                }} className="bg-gradient-to-b from-[#152F56] w-full to-[#2E67BC] text-white font-bold py-2 px-6 rounded-[25px]">
+                  Join Community
+                </button>
+                <Modal
+                  isOpen={modalIsOpen}
+                  onRequestClose={closeModal}
+                  className="modal-content"
+                  overlayClassName="modal-overlay"
+                >
+                  <StudentDetailsForm closeModal={closeModal} />
+                </Modal>
+              </div>
               <span className="text-[#8594AA] text-[12px] text-center" >Call us: 09160439575</span>
             </li>
           </ul>

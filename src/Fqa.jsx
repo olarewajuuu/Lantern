@@ -47,7 +47,7 @@ const Fqa = () => {
 
 
     return (
-        <div className="my-16" id="become-tutor">
+        <div className="my-16">
             <TopDesign />
 
             <div className="max-w-4xl mx-auto p-6 text-[#152F56]">

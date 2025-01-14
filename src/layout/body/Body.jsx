@@ -1,3 +1,4 @@
+import BecomeTutorForm from "../../BecomeTutorForm";
 import ChatButton from "../../components/ChatButton";
 import FindTutorPage from "../../FindTutorPage";
 import Fqa from "../../Fqa";
@@ -14,6 +15,7 @@ const Body = () => {
       <Testimonials />
       <ChatButton />
       <Fqa />
+      <BecomeTutorForm />
       <Footer />
 
     </div>
