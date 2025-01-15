@@ -1,18 +1,22 @@
 const Tutor = require('../models/Tutor');
 
-
 exports.submitTutorForm = async (req, res) => {
     try {
-        const { fullname, phone, email, cousre, portfolio, courseDuration, proposedFee, uniqueAboutYou } = req.body;
+        const { fullname, phonenumber, email, course, portfolio, courseDuration, proposedFee, uniqueAboutYou } = req.body;
         const { syllabus, cv } = req.files; // file upload
         
-        if (!fullname || !phone || !email || !course || !courseDuration || !proposedFee || !uniqueAboutYou) {
+        // Validate required fields
+        if (!fullname || !phonenumber || !email || !course || !courseDuration || !proposedFee || !uniqueAboutYou) {
             return res.status(400).json({ error: 'All required fields must be filled.' });
+        }
+
+        if (!syllabus || !cv) {
+            return res.status(400).json({ error: 'Both syllabus and CV files are required.' });
         }
 
         const tutor = new Tutor({
             fullname,
-            phone,
+            phonenumber, // Save the correct phone field
             email,
             course,
             portfolio: portfolio || null,
@@ -27,25 +31,6 @@ exports.submitTutorForm = async (req, res) => {
 
         res.status(201).json({ message: 'Tutor form submitted', tutor });
     } catch (error) {
-        res.status(400).json({ error: error.message });
-    }
-};
-
-
-
-exports.verifyTutorEmail = async (req, res) => {
-    try {
-        const tutor = await Tutor.findOne({ verificationToken: req.query.token });
-        if (!tutor) {
-            return res.status(400).json({ error: 'Invalid token' });
-        }
-
-        tutor.isVerified = true;
-        tutor.verificationToken = null;
-        await tutor.save();
-
-        res.status(200).json({ message: 'Tutor email verified successfully' });
-    } catch (error) {
-        res.status(400).json({ error: error.message });
+        res.status(500).json({ error: error.message });
     }
 };

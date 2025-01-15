@@ -1,9 +1,16 @@
 const express = require('express');
 const { submitTutorForm } = require('../controllers/tutorController');
-const upload = require('../utils/fileUpload'); 
+const upload = require('../utils/fileUpload'); // Import multer configuration
 
 const router = express.Router();
 
-// Validate tutor form on submission
-router.post('/submit', upload.fields([{ name: 'syllabus' }, { name: 'cv' }]), submitTutorForm);
+router.post(
+    '/submit',
+    upload.fields([
+        { name: 'syllabus', maxCount: 1 },
+        { name: 'cv', maxCount: 1 },
+    ]), // Accept `syllabus` and `cv` as file fields
+    submitTutorForm
+);
+
 module.exports = router;

@@ -5,6 +5,6 @@ const { submitReview } = require('../controllers/reviewController');
 const router = express.Router();
 
 // Use the middleware and attach the correct callback
-router.post('/submit', submitReview);
+router.post('/', submitReview);
 
 module.exports = router;

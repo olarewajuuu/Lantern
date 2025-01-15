@@ -1,21 +1,21 @@
-const User = require('../models/User');
+const User = require('../models/Student');
 
 
 // Register User
 exports.submitStudentDetails = async (req, res) => {
     try {
-        const { fullname, phone, email, location, sponsor, course } = req.body;
+        const { fullname, phonenumber, email, location, sponsor, course } = req.body;
         
-        if (!fullname || !phone || !email || !location || !sponsor || !course) {
+        if (!fullname || !phonenumber || !email || !location || !sponsor || !course) {
             return res.status(400).json({ error: 'All required fields must be filled' });
         }
         // create the user
         const student = new User({
             fullname,
-            phone, 
+            phonenumber, 
             email, 
             location,
-            sponsor, 
+            sponsor: sponsor || null, 
             course
         });
         await student.save();
