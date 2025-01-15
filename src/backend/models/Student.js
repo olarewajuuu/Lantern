@@ -22,7 +22,7 @@ const studentSchema = new mongoose.Schema({
         ],
         required: true
     },
-    isVerified: { type: Booleaen, default: false },
+    isVerified: { type: Boolean, default: false },
     verificationToken: { type: String }
 }, { timestamps: true });
 

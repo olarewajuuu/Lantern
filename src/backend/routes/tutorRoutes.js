@@ -1,6 +1,7 @@
 const express = require('express');
 const { submitTutorForm } = require('../controllers/tutorController');
 const upload = require('../utils/fileUpload');
+const { verifyTutorEmail } = require('../controllers/tutorController');
 
 const router = express.Router();
 
@@ -12,5 +13,8 @@ router.post(
     ]), // Accept `syllabus` and `cv` as file fields
     submitTutorForm
 );
+
+router.get('verify-email/:token', verifyTutorEmail);
+
 
 module.exports = router;
