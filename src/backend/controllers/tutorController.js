@@ -1,30 +1,32 @@
 const Tutor = require('../models/Tutor');
+const crypto = require('crypto');
+const sendEmail = require('../utils/sendEmail');
 
 exports.submitTutorForm = async (req, res) => {
     try {
-        const { fullname, phonenumber, email, course, portfolio, courseDuration, proposedFee, uniqueAboutYou } = req.body;
-        const { syllabus, cv } = req.files; // file upload
+        const { fullName, phoneNumber, email, course, portfolio, duration, fee, uniqueInfo } = req.body;
+        const { syllabusFile, cvFile } = req.files; // file upload
         
         // Validate required fields
-        if (!fullname || !phonenumber || !email || !course || !courseDuration || !proposedFee || !uniqueAboutYou) {
+        if (!fullName || !phoneNumber || !email || !course || !duration || !fee || !uniqueInfo) {
             return res.status(400).json({ error: 'All required fields must be filled.' });
         }
 
-        if (!syllabus || !cv) {
+        if (!syllabusFile || !cvFile) {
             return res.status(400).json({ error: 'Both syllabus and CV files are required.' });
         }
 
         const tutor = new Tutor({
-            fullname,
-            phonenumber, // Save the correct phone field
+            fullName,
+            phoneNumber, // Save the correct phone field
             email,
             course,
             portfolio: portfolio || null,
-            courseDuration,
-            proposedFee,
-            uniqueAboutYou,
-            syllabus: syllabus[0].path,
-            cv: cv[0].path,
+            duration,
+            fee,
+            uniqueInfo,
+            syllabusFile: syllabusFile[0].path,
+            cvFile: cvFile[0].path,
         });
 
         await tutor.save();
