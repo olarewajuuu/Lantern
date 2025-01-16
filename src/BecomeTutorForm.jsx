@@ -2,6 +2,7 @@ import { useState } from "react";
 import TopDesign from "./layout/header/TopDesign";
 import becometutoricon from "../public/becometutoricon.svg"
 import upload from "../public/upload.svg"
+import axios from "axios";
 
 const BecomeTutorForm = () => {
   const [formData, setFormData] = useState({
@@ -34,14 +35,33 @@ const BecomeTutorForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validation
-    if (!formData.fullName || !formData.phoneNumber || !formData.email || !formData.course || !formData.duration || !formData.fee || !formData.uniqueInfo) {
+    // Validation for text inputs
+    if (
+      !formData.fullName ||
+      !formData.phoneNumber ||
+      !formData.email ||
+      !formData.course ||
+      !formData.duration ||
+      !formData.fee ||
+      !formData.uniqueInfo
+    ) {
       setMessage("Please fill all required fields.");
       return;
     }
 
+    // Validation for email format
     if (!emailRegex.test(formData.email)) {
       setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    // Validation for file inputs
+    if (!formData.syllabusFile) {
+      setMessage("Please upload the course outline/syllabus.");
+      return;
+    }
+    if (!formData.cvFile) {
+      setMessage("Please upload your CV.");
       return;
     }
 
@@ -58,12 +78,14 @@ const BecomeTutorForm = () => {
       if (formData.syllabusFile) formDataToSend.append("syllabusFile", formData.syllabusFile);
       if (formData.cvFile) formDataToSend.append("cvFile", formData.cvFile);
 
-      const response = await fetch("https://your-backend-url.com/become-tutor", {
-        method: "POST",
-        body: formDataToSend,
+      // Axios POST request
+      const response = await axios.post("http://localhost/5000/api", formDataToSend, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         setMessage("Application submitted successfully!");
         setFormData({
           fullName: "",
@@ -85,6 +107,7 @@ const BecomeTutorForm = () => {
       setMessage("An error occurred. Please try again.");
     }
   };
+
 
   return (
     <div className="my-16" id="become-tutor">
@@ -188,11 +211,14 @@ const BecomeTutorForm = () => {
                 required
               ></textarea>
             </div>
+
             <div>
-              <label className="block font-medium mb-2">Upload Course Outline/Syllabus <span className="text-red-600">*</span></label>
+              <label className="block font-medium mb-2">
+                Upload Course Outline/Syllabus <span className="text-red-600">*</span>
+              </label>
               <label
                 htmlFor="syllabusFile"
-                className="p-14 border border-[#152F56] rounded flex items-center justify-center  cursor-pointer w-full"
+                className="p-14 border border-[#152F56] rounded flex items-center justify-center cursor-pointer w-full"
               >
                 <input
                   type="file"
@@ -204,15 +230,20 @@ const BecomeTutorForm = () => {
                 <div className="flex flex-col items-center">
                   <img src={upload} alt="Upload" className="w-12 h-12" />
                   <h4 className="text-[#152F56] text-[24px] my-3">Upload</h4>
-                  <span className="text-[16px] text-[#152F56]">Drag and drop files here</span>
+                  <span className="text-[16px] text-[#152F56]">
+                    {formData.syllabusFile ? formData.syllabusFile.name : "Drag and drop files here"}
+                  </span>
                 </div>
               </label>
             </div>
+
             <div>
-              <label className="block font-medium mb-2">Upload CV<span className="text-red-600">*</span></label>
+              <label className="block font-medium mb-2">
+                Upload CV <span className="text-red-600">*</span>
+              </label>
               <label
                 htmlFor="cvFile"
-                className="p-14 border border-[#152F56] rounded flex items-center justify-center  cursor-pointer w-fulll"
+                className="p-14 border border-[#152F56] rounded flex items-center justify-center cursor-pointer w-full"
               >
                 <input
                   type="file"
@@ -222,12 +253,16 @@ const BecomeTutorForm = () => {
                   id="cvFile"
                 />
                 <div className="flex flex-col items-center">
-                <img src={upload} alt="Upload" className="w-12 h-12" />
-                  <h4 className="text-[#152F56] text-[24px] my-3">Upload CV</h4>
-                  <span className="text-[16px] text-[#152F56]">Drag and drop files here</span>
+                  <img src={upload} alt="Upload" className="w-12 h-12" />
+                  <h4 className="text-[#152F56] text-[24px] my-3">Upload</h4>
+                  <span className="text-[16px] text-[#152F56]">
+                    {formData.cvFile ? formData.cvFile.name : "Drag and drop files here"}
+                  </span>
                 </div>
               </label>
             </div>
+
+
             <div className="w-full flex justify-center items-center">
               <button
                 type="submit"
@@ -236,7 +271,7 @@ const BecomeTutorForm = () => {
                 Submit Application
               </button>
             </div>
-            {message && <p className="text-center mt-4">{message}</p>}
+            {message && <p className="text-center mt-4 text-red-600">{message}</p>}
           </form>
         </div>
       </div>

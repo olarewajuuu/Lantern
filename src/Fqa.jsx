@@ -19,27 +19,22 @@ const Fqa = () => {
         {
             question: "How do I interact with my tutor?",
             answer:
-                "No, you don’t need any prior experience. All our courses are for complete beginners. Our tutors will teach you everything step by step, from scratch.",
-        },
-        {
-            question: "Do i need to know anything about computers or technology before starting?",
-            answer:
-                "Don’t worry! All sessions are recorded and can be accessed at your convenience.",
+                "Not an issue, once you have been assigned to an instructor, he or she will reach out to you to share communication route.",
         },
         {
             question: "Will i get a job after completing a course?",
             answer:
-                "No prerequisites are required. Our courses are designed for all levels, from beginners to advanced learners.",
+                "That’s relative to what the course is, but in a scale of 1-10, you are 7/10 chances of we helping yu secure a job, terms and conditions applies.",
         },
         {
             question: "Will i get a certificate after completing a course?",
             answer:
-                "Certificates are awarded after successfully completing the course and passing the assessment.",
+                "Yes we issue a locally recognized certificate.",
         },
         {
-            question: "How do i choose the right tech course for me?",
+            question: "How do i choose the right tech course?",
             answer:
-                "Certificates are awarded after successfully completing the course and passing the assessment.",
+                "You chat with us, we will advice you properly at zero cost.",
         },
     ];
 

@@ -7,7 +7,6 @@ body {
 .top-design {
   display: flex;
   justify-content: center;
-  margin-top: 16px; 
 }
 .graduation-cap {
   display: flex;

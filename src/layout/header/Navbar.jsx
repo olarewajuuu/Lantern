@@ -11,7 +11,6 @@ import course from "/course.svg"
 import tutor from "/tutor.svg"
 import becometutor from "/becometutor.svg"
 import testimonial from "/testimonial.svg"
-import StudentDetailsForm from "../../StudentDetailsForm";
 
 
 
@@ -20,7 +19,7 @@ import StudentDetailsForm from "../../StudentDetailsForm";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("How to Start your Tech Career"); // State for active link
+  const [activeLink, setActiveLink] = useState("How to Start"); // State for active link
   const menuRef = useRef(null);
 
   const toggleMenu = () => {
@@ -56,10 +55,9 @@ const Navbar = () => {
 
 
 
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  const openModal = () => setModalIsOpen(true);
-  const closeModal = () => setModalIsOpen(false);
+  const redirectToTelegram = () => {
+    window.open("https://t.me/+kl76Kr3TTANiNWZkZ", "_blank");
+  };
 
 
 
@@ -73,12 +71,12 @@ const Navbar = () => {
         {/* Desktop Links */}
         <ul className="items-center hidden space-x-12 vlg:flex">
           <li
-            className={`cursor-pointer ${activeLink === "How to Start your Tech Career"
+            className={`cursor-pointer ${activeLink === "How to Start"
               ? "bg-[#DBD6F569] font-semibold px-4 py-2 rounded-[25px]"
               : "text-[#152F56] font-semibold text-[16px] hover:text-gray-800"
               }`}
-            onClick={() => scrollToSection("hero", "How to Start your Tech Career")}
-          >How to Start your Tech Career</li>
+            onClick={() => scrollToSection("hero", "How to Start")}
+          >How to Start</li>
           <li
             className={`cursor-pointer ${activeLink === "Courses"
               ? "bg-[#DBD6F569] font-semibold px-4 py-2 rounded-[25px]"
@@ -101,7 +99,7 @@ const Navbar = () => {
             onClick={() => scrollToSection("become-tutor", "Become a Tutor")}
           >Become a Tutor</li>
           <li>
-            <button className="bg-gradient-to-b from-[#152F56] to-[#2E67BC] text-white font-bold py-2 px-6 rounded-[25px]">
+            <button onClick={redirectToTelegram} className="bg-gradient-to-b from-[#152F56] to-[#2E67BC] text-white font-bold py-2 px-6 rounded-[25px]">
               Join Community
             </button>
           </li>
@@ -130,7 +128,7 @@ const Navbar = () => {
           <ul className="flex flex-col p-6 space-y-6">
             <li
               className="text-[#152F56] text-[16px] font-semibold hover:text-gray-800 flex gap-2"
-              onClick={() => scrollToSection("hero", "How to Start your Tech Career")}
+              onClick={() => scrollToSection("hero", "How to Start")}
             >
               <img src={start} alt="" />
               <span>How to Start</span>
@@ -165,19 +163,10 @@ const Navbar = () => {
             </li>
             <li className="flex flex-col justify-center w-full">
               <div>
-                <button onClick={() => {
-                  console.log("Opening modal...");
-                }} className="bg-gradient-to-b from-[#152F56] w-full to-[#2E67BC] text-white font-bold py-2 px-6 rounded-[25px]">
+                <button onClick={redirectToTelegram} className="bg-gradient-to-b from-[#152F56] w-full to-[#2E67BC] text-white font-bold py-2 px-6 rounded-[25px]">
                   Join Community
                 </button>
-                <Modal
-                  isOpen={modalIsOpen}
-                  onRequestClose={closeModal}
-                  className="modal-content"
-                  overlayClassName="modal-overlay"
-                >
-                  <StudentDetailsForm closeModal={closeModal} />
-                </Modal>
+                
               </div>
               <span className="text-[#8594AA] text-[12px] text-center" >Call us: 09160439575</span>
             </li>
