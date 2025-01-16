@@ -163,7 +163,7 @@ const Navbar = () => {
             </li>
             <li className="flex flex-col justify-center w-full">
               <div>
-                <button onClick={redirectToTelegram} className="bg-gradient-to-b from-[#152F56] w-full to-[#2E67BC] text-white font-bold py-2 px-14 rounded-[25px]">
+                <button onClick={redirectToTelegram} className="bg-gradient-to-b from-[#152F56] w-full to-[#2E67BC] text-white font-bold py-2 px-12 rounded-[25px]">
                   Join Community
                 </button>
                 
