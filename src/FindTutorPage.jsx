@@ -9,13 +9,14 @@ import ochayiPics from "../public/ochayi.png";
 import temiPics from "../public/temi.png";
 import maryPics from "../public/mary.png";
 import temilehinPics from "../public/temilehin.png";
-// import anuPics from "../public/anu.png"
+import anuPics from "../public/anu.png"
 import ayoPics from "../public/ayodele.png";
 import bamidelePics from "../public/bamidele.png";
 import adesewaPics from "../public/adesewa.png";
 import dayoPics from "../public/dayo.png";
 import busolaPics from "../public/busola.png";
 import natPics from "../public/nat.png";
+import olumidePics from "../public/olumide.png";
 import StudentDetailsForm from "./StudentDetailsForm";
 
 
@@ -31,7 +32,7 @@ const tutors = [
     about:
       "I’m Damilare, I’m a front-end dev with years of experience. I mentor beginners, helping them build practical skills for real-world desktop and mobile web",
     course: "Front-end Dev",
-    type: "online classes only",
+    type: "online and physical classes",
     learn: [
       "No prior experience needed it's perfect for beginners.",
       "Master HTML, CSS, and JavaScript to build visually stunning and responsive websites.",
@@ -103,7 +104,7 @@ const tutors = [
   {
     heading: "IELTS Tutors",
     name: "Olumide     ",
-    image: oluPics,
+    image: olumidePics,
     position: "IELTS Coordinator ",
     rating: "5/5",
     reviews: "99",
@@ -122,7 +123,7 @@ const tutors = [
   {
     heading: "GRE/GMAT Tutors",
     name: "Anuoluwapo     ",
-    // image: anuPics,
+    image: anuPics,
     students: "324",
     position: "GRE/GMAT Tutor",
     rating: "5/5",
@@ -244,12 +245,12 @@ const tutors = [
     name: "Ayodele    ",
     image: ayoPics,
     students: "324",
-    position: " Tutor",
+    position: "Cybersecurity Tutor",
     rating: "5/5",
     reviews: "234",
     about:
       "I’m Ayodele, cybersecurity expert with multiple certification and years of experience.",
-    course: "course",
+    course: "Cybersecurity course",
     type: "online classes only",
     learn: [
       "Anyone can apply, its beginner friendly.",

@@ -56,7 +56,7 @@ const Navbar = () => {
 
 
   const redirectToTelegram = () => {
-    window.open("https://t.me/+kl76Kr3TTANiNWZkZ", "_blank");
+    window.open("https://t.me/LANTERNCOMMUNITY", "_blank");
   };
 
 
