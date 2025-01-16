@@ -9,14 +9,14 @@ import ochayiPics from "../public/ochayi.png";
 import temiPics from "../public/temi.png";
 import maryPics from "../public/mary.png";
 import temilehinPics from "../public/temilehin.png";
-import anuPics from "../public/anu.png"
+// import anuPics from "../public/anu.png"
 import ayoPics from "../public/ayodele.png";
 import bamidelePics from "../public/bamidele.png";
 import adesewaPics from "../public/adesewa.png";
 import dayoPics from "../public/dayo.png";
 import busolaPics from "../public/busola.png";
 import natPics from "../public/nat.png";
-import olumidePics from "../public/olumide.png";
+import olumidePics from "../public/olumideIELTS.png";
 import StudentDetailsForm from "./StudentDetailsForm";
 
 
@@ -123,7 +123,7 @@ const tutors = [
   {
     heading: "GRE/GMAT Tutors",
     name: "Anuoluwapo     ",
-    image: anuPics,
+    image: olumidePics,
     students: "324",
     position: "GRE/GMAT Tutor",
     rating: "5/5",
