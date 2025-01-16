@@ -163,12 +163,12 @@ const Navbar = () => {
             </li>
             <li className="flex flex-col justify-center w-full">
               <div>
-                <button onClick={redirectToTelegram} className="bg-gradient-to-b from-[#152F56] w-full to-[#2E67BC] text-white font-bold py-2 px-6 rounded-[25px]">
+                <button onClick={redirectToTelegram} className="bg-gradient-to-b from-[#152F56] w-full to-[#2E67BC] text-white font-bold py-2 px-14 rounded-[25px]">
                   Join Community
                 </button>
                 
               </div>
-              <span className="text-[#8594AA] text-[12px] text-center" >Call us: 09160439575</span>
+              <span className="text-[#8594AA] text-[12px] text-center" >Chat us: 08164790661</span>
             </li>
           </ul>
         </div>

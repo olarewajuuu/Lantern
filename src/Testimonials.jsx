@@ -50,7 +50,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="testimonials">
+    <section className="testimonials" id='testimonials'>
         <TopDesign />
       <div className="people-svg">
         <img src={PeopleIcon} alt="People illustration" />
