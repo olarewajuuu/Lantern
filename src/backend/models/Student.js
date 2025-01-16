@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 
 const studentSchema = new mongoose.Schema({
-    fullname: {  type: String, required: true },
-    phone: { type: String, required: true },
+    fullName: {  type: String, required: true },
+    phoneNumber: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     location: { type: String, required: true },
     sponsor: { type: String, default: null},
@@ -21,7 +21,9 @@ const studentSchema = new mongoose.Schema({
             "Virtual Asistant"
         ],
         required: true
-    }
+    },
+    isVerified: { type: Boolean, default: false },
+    verificationToken: { type: String }
 }, { timestamps: true });
 
 
