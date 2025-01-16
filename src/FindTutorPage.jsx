@@ -9,7 +9,7 @@ import ochayiPics from "../public/ochayi.png";
 import temiPics from "../public/temi.png";
 import maryPics from "../public/mary.png";
 import temilehinPics from "../public/temilehin.png";
-// import anuPics from "../public/anu.png"
+import anuoluwapoPics from "../public/anuoluwapo.svg"
 import ayoPics from "../public/ayodele.png";
 import bamidelePics from "../public/bamidele.png";
 import adesewaPics from "../public/adesewa.png";
@@ -123,7 +123,7 @@ const tutors = [
   {
     heading: "GRE/GMAT Tutors",
     name: "Anuoluwapo     ",
-    image: olumidePics,
+    image: anuoluwapoPics,
     students: "324",
     position: "GRE/GMAT Tutor",
     rating: "5/5",
