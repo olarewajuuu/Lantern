@@ -30,16 +30,28 @@ export const courses = [
     subText: "Remote job salary: $1,080",
   },
   {
+    title: "Software Enginerring",
+    text: "Learn how to build mobile and web apps from scratch",
+    path: "swe.png",
+    subText: "Remote job salary: $2,000",
+  },
+  {
     title: "UX/UI Design",
     text: "Master how to design great user experience on digital interfaces",
     path: "ux_course.png",
     subText: "Remote job salary: $1,490",
   },
   {
-    title: "Software Enginerring",
-    text: "Learn how to build mobile and web apps from scratch",
-    path: "swe.png",
-    subText: "Remote job salary: $2,000",
+    title: "Back-end Development",
+    text: "Discover how websites and apps work behind the scenes ",
+    path: "backend.svg",
+    subText: "Remote job salary: $1,600",
+  },
+  {
+    title: "Data Science/Analytics",
+    text: "Master how to use data to help businesses grow and solve problems ",
+    path: "data_analsyt.png",
+    subText: "Remote job salary: $1,200",
   },
   {
     title: "IELTS",
@@ -48,17 +60,30 @@ export const courses = [
     subText: "Gain your school admisison easily",
   },
   {
+    title: "TOEFL",
+    text: "Improve your English speaking, listening, reading and writing for TOEFL exam.",
+    path: "toefl.svg",
+    subText: "99% pass rate among our students",
+  },
+  {
     title: "GMAT",
     text: "Learn the fundamentals of GMAT exams, including verbal and quantitative sections.",
     path: "gmat.png",
     subText: "Receive secret tips to pass at first sitting",
   },
   {
-    title: "Data Science/Analytics",
-    text: "Master how to use data to help businesses grow and solve problems ",
-    path: "data_analsyt.png",
-    subText: "Remote job salary: $1,200",
+    title: "GRE",
+    text: "Learn effective techniques for tackling   GRE questions",
+    path: "gre.svg",
+    subText: "99% pass rate among our students",
   },
+  {
+    title: "SAT",
+    text: "Master reading, writing and math for SAT exams",
+    path: "sat.svg",
+    subText: "Guaranteed pass rate among our students",
+  },
+ 
   {
     title: "ICAN",
     text: "Become a chartered accountant in just one sitting with our expert tutors",
@@ -77,4 +102,5 @@ export const courses = [
     path: "duolingo.png",
     subText: "Get ahead of others with multilingual skills",
   },
+  
 ];
