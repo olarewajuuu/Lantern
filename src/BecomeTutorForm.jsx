@@ -115,7 +115,7 @@ const BecomeTutorForm = () => {
       <div className="max-w-4xl mx-auto  text-[#152F56]">
         <span><img className="mb-6 mx-auto" src={becometutoricon} alt="" /></span>
         <h1 className="text-[36px] font-bold text-center mb-4">Become a Tutor, Come Join Us!</h1>
-        <p className="text-center mt-24 mb-10 text-[16px]">Please fill out the form below to submit your application to become a tutor.</p>
+        <p className="text-center mt-14 mb-10 text-[20px] text-red-600">Please fill out the form below and register</p>
         <div className="bg-gray-50 p-6 rounded shadow-xl">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

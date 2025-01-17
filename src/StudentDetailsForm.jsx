@@ -88,7 +88,7 @@ const StudentDetailsForm = ({ closeModal }) => {
         onClick={(e) => {
           if (e.target.id === "overlay") closeModal();
         }}
-        className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center overflow-y-auto lg:pt-[450px] pt-[600px] text-[#152F56]"
+        className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center overflow-y-auto lg:pt-[450px] pt-[700px] text-[#152F56]"
       >
         <div className="bg-white px-10 pb-6 rounded-lg shadow-lg relative w-full max-w-3xl">
           <TopDesign className="" />
@@ -203,6 +203,8 @@ const StudentDetailsForm = ({ closeModal }) => {
                     "Digital Marketing",
                     "Project Management",
                     "Virtual Assistant",
+                    "Cyber Security",
+                    "Network Engineering",
                   ].map((course) => (
                     <label key={course} className="flex items-center">
                       <input
