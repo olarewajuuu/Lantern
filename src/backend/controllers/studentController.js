@@ -5,9 +5,9 @@ const sendEmail = require('../utils/sendEmail');
 // Register User
 exports.submitStudentDetails = async (req, res) => {
     try {
-        const { fullName, phoneNumber, email, location, sponsor, course } = req.body;
+        const { fullName, phoneNumber, email, location, sponsor, selectedCourse } = req.body;
         // validate require fields
-        if (!fullName || !phoneNumber || !email || !location || !sponsor || !course) {
+        if (!fullName || !phoneNumber || !email || !location || !sponsor || !selectedCourse) {
             return res.status(400).json({ error: 'All required fields must be filled' });
         }
 
@@ -28,7 +28,7 @@ exports.submitStudentDetails = async (req, res) => {
             email, 
             location,
             sponsor: sponsor || null, 
-            course,
+            selectedCourse,
             isVerified: false,
             verificationToken
         });

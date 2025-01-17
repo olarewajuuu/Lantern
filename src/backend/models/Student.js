@@ -7,7 +7,7 @@ const studentSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     location: { type: String, required: true },
     sponsor: { type: String, default: null},
-    course: {
+    selectedCourse: {
         type: String, 
         enum: [
             "Software Engineering",

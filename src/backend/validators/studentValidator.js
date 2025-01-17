@@ -19,7 +19,7 @@ const studentValidationRules = [
     body('location')
         .notEmpty()
         .withMessage('Location is required.'),
-    body('course')
+    body('selectedCourse')
         .notEmpty()
         .withMessage('Course selection is required.')
         .isIn([
