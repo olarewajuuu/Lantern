@@ -2,13 +2,14 @@ const Student = require('../models/Student');
 const crypto = require('crypto');
 const sendEmail = require('../utils/sendEmail');
 
+
 // Submit Student Details
 exports.submitStudentDetails = async (req, res) => {
     try {
         const { fullName, phoneNumber, email, location, sponsor, selectedCourse } = req.body;
 
         // Validate required fields
-        if (!fullName || !phoneNumber || !email || !location || !sponsor || !selectedCourse) {
+        if (!fullName || !phoneNumber || !email || !location || !selectedCourse) {
             return res.status(400).json({ error: 'All required fields must be filled' });
         }
 
@@ -18,10 +19,10 @@ exports.submitStudentDetails = async (req, res) => {
             return res.status(400).json({ error: 'Email already exists' });
         }
 
-        // Generate the email verification token
+        // Generate email verification token
         const verificationToken = crypto.randomBytes(32).toString('hex');
 
-        // Create a new student
+        // Create the student
         const student = new Student({
             fullName,
             phoneNumber,
@@ -32,18 +33,24 @@ exports.submitStudentDetails = async (req, res) => {
             isVerified: false,
             verificationToken,
         });
+
         await student.save();
 
-        // Send verification email to student
-        const verificationUrl = `${process.env.FRONTEND_URL}/verify-email/${verificationToken}`;
-        const studentEmailText = `Hi ${fullName},\n\nPlease verify your email by clicking the link below:\n${verificationUrl}`;
-        await sendEmail(email, 'Email Verification', studentEmailText);
+        // Create the verification URL
+        const verificationUrl = `${process.env.BACKEND_URL}/api/students/verify-email/${verificationToken}`;
 
-        // Send notification email to Lantern Academy
-        const adminEmailText = `A new student registration has been submitted:\n\nName: ${fullName}\nEmail: ${email}\nPhone: ${phoneNumber}\nCourse: ${selectedCourse}`;
-        await sendEmail('Lanternacademyreg@gmail.com', 'New Student Registration', adminEmailText);
+        // Send verification email
+        const subject = 'Please Verify Your Email';
+        const message = `
+            Hi ${fullName},
+            Thank you for registering as a student. Please verify your email by clicking the link below:
+            ${verificationUrl}
 
-        res.status(201).json({ message: 'Student form submitted. Please verify your email.' });
+            If you did not request this, please ignore this email.
+        `;
+        await sendEmail(email, subject, message);
+
+        res.status(201).json({ message: 'Student form submitted. Please check your email to verify your account.' });
     } catch (error) {
         console.error('Error submitting student form:', error.message);
         res.status(500).json({ error: 'An error occurred while submitting the form.' });

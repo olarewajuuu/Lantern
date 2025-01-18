@@ -14,7 +14,7 @@ router.post(
     submitTutorForm
 );
 
-router.get('verify-email/:token', verifyTutorEmail);
+router.get('/verify-email/:token', verifyTutorEmail);
 
 
 module.exports = router;
