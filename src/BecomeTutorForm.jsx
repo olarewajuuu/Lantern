@@ -79,7 +79,7 @@ const BecomeTutorForm = () => {
       if (formData.cvFile) formDataToSend.append("cvFile", formData.cvFile);
 
       // Axios POST request
-      const response = await axios.post("http://localhost/5000/api", formDataToSend, {
+      const response = await axios.post("http://localhost:5000/api/tutors/submit", formDataToSend, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
