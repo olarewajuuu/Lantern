@@ -1,9 +1,10 @@
-import BecomeTutorForm from "../../BecomeTutorForm";
-import ChatButton from "../../components/ChatButton";
-import FindTutorPage from "../../FindTutorPage";
-import Fqa from "../../Fqa";
-import Homepage from "../../frontend/modules/Hompage/Homepage";
-import Testimonials from "../../Testimonials";
+import BecomeTutorForm from "../../frontend/auth/BecomeTutorForm";
+
+import FindTutorPage from "../../frontend/components/FindTutorPage";
+import Fqa from "../../frontend/components/Fqa";
+import ChatButton from "../../frontend/components/ChatButton";
+import Homepage from "../../frontend/components/Homepage";
+import Testimonials from "../../frontend/components/Testimonials";
 import Footer from "../footer/Footer";
 
 const Body = () => {

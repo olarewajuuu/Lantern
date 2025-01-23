@@ -1,11 +1,11 @@
-import GroupPic from "../../../../public/group_pic.png";
-import Star from "../../../../public/star.svg";
-import HeroPic from "../../../../public/hero.png";
-import TopDesign from "../../../layout/header/TopDesign";
-import Circle from "../../components/icons/circle";
-import EmptyCircle from "../../components/icons/empty_circle";
-import { courses, list_data } from "../../utils/data";
-import FaceShadow from "../../../../public/face_shadow";
+import GroupPic from "../../../public/group_pic.png";
+import Star from "../../../public/star.svg";
+import HeroPic from "../../../public/hero.png";
+import TopDesign from "../../layout/header/TopDesign";
+import Circle from "./icons/circle";
+import EmptyCircle from "./icons/empty_circle";
+import { courses, list_data } from "../utils/data";
+import FaceShadow from "../../../public/face_shadow";
 
 export default function Homepage() {
   return (
