@@ -1,12 +1,7 @@
 import { useState } from "react";
-<<<<<<< HEAD:src/StudentDetailsForm.jsx
-import TopDesign from "./layout/header/TopDesign";
-import becometutoricon from "../public/becometutoricon.svg";
-import { submitStudentDetails } from "./api/student";
-=======
+import { submitStudentDetails } from "../api/student";
 import TopDesign from "../../layout/header/TopDesign";
 import becometutoricon from "../../../public/becometutoricon.svg";
->>>>>>> bb98af48c431a1c22f91f8d359b24cd78c0ab755:src/frontend/auth/StudentDetailsForm.jsx
 
 const StudentDetailsForm = ({ closeModal }) => {
   const [formData, setFormData] = useState({
