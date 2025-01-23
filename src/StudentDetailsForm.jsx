@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TopDesign from "./layout/header/TopDesign";
 import becometutoricon from "../public/becometutoricon.svg";
+import { submitStudentDetails } from "./api/student";
 
 const StudentDetailsForm = ({ closeModal }) => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,10 @@ const StudentDetailsForm = ({ closeModal }) => {
     sponsor: "",
     selectedCourses: [],
   });
+  // create const for sucess, error and loading 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const [errors, setErrors] = useState({});
 
@@ -53,32 +58,15 @@ const StudentDetailsForm = ({ closeModal }) => {
     if (!validate()) return;
 
     try {
-      const response = await fetch("https://your-backend-url.com/student-details", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        alert("Application submitted successfully!");
-        setFormData({
-          fullName: "",
-          phoneNumber: "",
-          email: "",
-          location: "",
-          sponsor: "",
-          selectedCourses: [],
-        });
-        closeModal();
-      } else {
-        alert("Error submitting application. Please try again.");
-      }
+      // 
+      const response = await submitStudentDetails(formData);
+      setSuccess(response.message);
     } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred. Please try again.");
+      setError(error.message);
+    } finally {
+      setLoading(false);
     }
+    // 
   };
 
   return (

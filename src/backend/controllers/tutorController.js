@@ -49,16 +49,11 @@ exports.submitTutorForm = async (req, res) => {
 
 
         // Send email verification
+        const from = process.env.TUTOR_EMAIL; // Sender email for tutors
         const subject = 'Please Verify Your Email';
-        const message = `
-            Hi ${fullName},
-            Thank you for submitting your tutor application. Please verify your email by clicking the link below:
-            ${verificationLink}
+        const message = `Hi ${fullName},\n\nPlease verify your email by clicking the link below:\n${verificationLink}`;
 
-            If you did not request this, please ignore this email.
-        `;
-
-        await sendEmail(email, subject, message);
+        await sendEmail(email, subject, message, from);
 
         // Send admin notification email
         const adminEmail = 'Lanternacademyreg@gmail.com';

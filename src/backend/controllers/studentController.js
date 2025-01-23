@@ -40,15 +40,11 @@ exports.submitStudentDetails = async (req, res) => {
         const verificationUrl = `${process.env.BACKEND_URL}/api/students/verify-email/${verificationToken}`;
 
         // Send verification email
+        const from = process.env.STUDENT_EMAIL; // Sender email for students
         const subject = 'Please Verify Your Email';
-        const message = `
-            Hi ${fullName},
-            Thank you for registering as a student. Please verify your email by clicking the link below:
-            ${verificationUrl}
+        const message = `Hi ${fullName},\n\nPlease verify your email by clicking the link below:\n${verificationLink}`;
 
-            If you did not request this, please ignore this email.
-        `;
-        await sendEmail(email, subject, message);
+        await sendEmail(email, subject, message, from);
 
         res.status(201).json({ message: 'Student form submitted. Please check your email to verify your account.' });
     } catch (error) {
