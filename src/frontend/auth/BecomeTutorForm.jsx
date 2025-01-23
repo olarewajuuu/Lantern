@@ -2,7 +2,7 @@ import { useState } from "react";
 import TopDesign from "../../layout/header/TopDesign";
 import becometutoricon from "../../../public/becometutoricon.svg"
 import upload from "../../../public/upload.svg"
-import axios from "axios";
+import { submitTutorForm } from '../api/tutor';
 
 
 const BecomeTutorForm = () => {
@@ -33,81 +33,84 @@ const BecomeTutorForm = () => {
     setFormData({ ...formData, [name]: files[0] });
   };
 
+  // change axios to fetch
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Validation for text inputs
     if (
-      !formData.fullName ||
-      !formData.phoneNumber ||
-      !formData.email ||
-      !formData.course ||
-      !formData.duration ||
-      !formData.fee ||
-      !formData.uniqueInfo
+        !formData.fullName ||
+        !formData.phoneNumber ||
+        !formData.email ||
+        !formData.course ||
+        !formData.duration ||
+        !formData.fee ||
+        !formData.uniqueInfo
     ) {
-      setMessage("Please fill all required fields.");
-      return;
+        setMessage("Please fill all required fields.");
+        return;
     }
 
     // Validation for email format
     if (!emailRegex.test(formData.email)) {
-      setMessage("Please enter a valid email address.");
-      return;
+        setMessage("Please enter a valid email address.");
+        return;
     }
 
     // Validation for file inputs
     if (!formData.syllabusFile) {
-      setMessage("Please upload the course outline/syllabus.");
-      return;
+        setMessage("Please upload the course outline/syllabus.");
+        return;
     }
     if (!formData.cvFile) {
-      setMessage("Please upload your CV.");
-      return;
+        setMessage("Please upload your CV.");
+        return;
     }
 
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append("fullName", formData.fullName);
-      formDataToSend.append("phoneNumber", formData.phoneNumber);
-      formDataToSend.append("email", formData.email);
-      formDataToSend.append("course", formData.course);
-      formDataToSend.append("portfolio", formData.portfolio);
-      formDataToSend.append("duration", formData.duration);
-      formDataToSend.append("fee", formData.fee);
-      formDataToSend.append("uniqueInfo", formData.uniqueInfo);
-      if (formData.syllabusFile) formDataToSend.append("syllabusFile", formData.syllabusFile);
-      if (formData.cvFile) formDataToSend.append("cvFile", formData.cvFile);
+        const formDataToSend = new FormData();
+        formDataToSend.append("fullName", formData.fullName);
+        formDataToSend.append("phoneNumber", formData.phoneNumber);
+        formDataToSend.append("email", formData.email);
+        formDataToSend.append("course", formData.course);
+        formDataToSend.append("portfolio", formData.portfolio);
+        formDataToSend.append("duration", formData.duration);
+        formDataToSend.append("fee", formData.fee);
+        formDataToSend.append("uniqueInfo", formData.uniqueInfo);
+        formDataToSend.append("syllabusFile", formData.syllabusFile);
+        formDataToSend.append("cvFile", formData.cvFile);
 
-      // Axios POST request
-      const response = await axios.post("http://localhost:5000/api/tutors/submit", formDataToSend, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      if (response.status === 200) {
-        setMessage("Application submitted successfully!");
-        setFormData({
-          fullName: "",
-          phoneNumber: "",
-          email: "",
-          course: "",
-          portfolio: "",
-          duration: "",
-          fee: "",
-          uniqueInfo: "",
-          syllabusFile: null,
-          cvFile: null,
+        // Fetch POST request
+        const response = await fetch("http://localhost:5000/api/tutors/submit", {
+            method: "POST",
+            body: formDataToSend, // FormData handles multipart/form-data automatically
         });
-      } else {
-        setMessage("Error submitting application. Please try again.");
-      }
+
+        if (response.ok) {
+            const result = await response.json();
+            setMessage("Application submitted successfully!");
+            setFormData({
+                fullName: "",
+                phoneNumber: "",
+                email: "",
+                course: "",
+                portfolio: "",
+                duration: "",
+                fee: "",
+                uniqueInfo: "",
+                syllabusFile: null,
+                cvFile: null,
+            });
+        } else {
+            const error = await response.json();
+            setMessage(error.error || "Error submitting application. Please try again.");
+        }
     } catch (error) {
-      console.error("Error:", error);
-      setMessage("An error occurred. Please try again.");
+        console.error("Error:", error);
+        setMessage("An error occurred. Please try again.");
     }
-  };
+};
+
 
 
   return (

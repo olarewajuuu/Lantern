@@ -4,6 +4,7 @@ import twitterlogo from "../../../public/twitterr.svg"
 import facebooklogo from "../../../public/facebook.svg"
 import linkedinlogo from "../../../public/linkedin.svg"
 import { useState } from "react"
+import { subscribeToNewsletter } from "../api/subscribe";
 
 const DesktopFooter = () => {
 
@@ -25,42 +26,45 @@ const DesktopFooter = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         // Clear previous messages
         setMessage("");
-
+    
         // Validate email
         if (!email.trim()) {
             setMessage("Please enter an email.");
             return;
         }
-
+    
         if (!validateEmail(email)) {
             setMessage("Please enter a valid email address.");
             return;
         }
-
+    
         try {
             // Send the email to the backend
-            const response = await fetch("https://your-backend-url.com/subscribe", {
+            const response = await fetch("http://localhost:5000/api/subscribe", { 
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ email }),
             });
-
+    
             if (response.ok) {
-                setMessage("Thank you for subscribing!");
+                const result = await response.json();
+                setMessage(result.message || "Thank you for subscribing!");
                 setEmail(""); // Clear the email input
             } else {
-                setMessage("Oops! Something went wrong. Please try again.");
+                const error = await response.json();
+                setMessage(error.error || "Oops! Something went wrong. Please try again.");
             }
         } catch (error) {
             console.error("Error submitting email:", error);
             setMessage("An error occurred. Please try again.");
         }
     };
+    
 
     return (
         <footer className="hidden lg:block bg-gradient-to-b from-[#3160CF] w-full to-[#264AA0] text-white py-10">
