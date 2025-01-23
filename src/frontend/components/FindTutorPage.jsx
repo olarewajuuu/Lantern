@@ -17,7 +17,7 @@ import dayoPics from "../../../public/dayo.png";
 import busolaPics from "../../../public/busola.png";
 import natPics from "../../../public/nat.png";
 import olumidePics from "../../../public/olumideIELTS.png";
-import StudentDetailsForm from "./StudentDetailsForm";
+import StudentDetailsForm from "../auth/StudentDetailsForm";
 
 
 const tutors = [

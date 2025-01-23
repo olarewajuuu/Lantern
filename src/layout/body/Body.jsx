@@ -1,4 +1,4 @@
-import BecomeTutorForm from "../../frontend/components/BecomeTutorForm";
+import BecomeTutorForm from "../../frontend/auth/BecomeTutorForm";
 
 import FindTutorPage from "../../frontend/components/FindTutorPage";
 import Fqa from "../../frontend/components/Fqa";
