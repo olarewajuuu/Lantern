@@ -1,7 +1,7 @@
 import { useState } from "react";
-import TopDesign from "./layout/header/TopDesign";
-import becometutoricon from "../public/becometutoricon.svg"
-import upload from "../public/upload.svg"
+import TopDesign from "../../layout/header/TopDesign";
+import becometutoricon from "../../../public/becometutoricon.svg"
+import upload from "../../../public/upload.svg"
 import axios from "axios";
 
 const BecomeTutorForm = () => {

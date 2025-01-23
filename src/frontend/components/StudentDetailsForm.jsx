@@ -1,6 +1,6 @@
 import { useState } from "react";
-import TopDesign from "./layout/header/TopDesign";
-import becometutoricon from "../public/becometutoricon.svg";
+import TopDesign from "../../layout/header/TopDesign";
+import becometutoricon from "../../../public/becometutoricon.svg";
 
 const StudentDetailsForm = ({ closeModal }) => {
   const [formData, setFormData] = useState({

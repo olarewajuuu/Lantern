@@ -1,10 +1,10 @@
 import { useState } from "react";
-import TopDesign from "./layout/header/TopDesign"
-import fqaicon from ".././public/fqaicon.svg"
-import fqaopen from ".././public/fqaopen.svg"
+import TopDesign from "../../layout/header/TopDesign"
+import fqaicon from "../../../public/fqaicon.svg"
+import fqaopen from "../../../public/fqaopen.svg"
 // import fqaclose from ".././public/fqaclose.svg"
-import fqacall from ".././public/fqacall.svg"
-import fqamail from ".././public/fqamail.svg"
+import fqacall from "../../../public/fqacall.svg"
+import fqamail from "../../../public/fqamail.svg"
 
 
 const Fqa = () => {

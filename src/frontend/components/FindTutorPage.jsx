@@ -1,22 +1,22 @@
 
 import "./FindTutorPage.css";
-import TopDesign from "./layout/header/TopDesign";
+import TopDesign from "../../layout/header/TopDesign";
 import { useState } from "react";
-import Graduation from '../public/graduationcap.svg';
-import DamiPics from "../public/dami.png";
-import oluPics from "../public/olumide.png";
-import ochayiPics from "../public/ochayi.png";
-import temiPics from "../public/temi.png";
-import maryPics from "../public/mary.png";
-import temilehinPics from "../public/temilehin.png";
-import anuoluwapoPics from "../public/anuoluwapo.svg"
-import ayoPics from "../public/ayodele.png";
-import bamidelePics from "../public/bamidele.png";
-import adesewaPics from "../public/adesewa.png";
-import dayoPics from "../public/dayo.png";
-import busolaPics from "../public/busola.png";
-import natPics from "../public/nat.png";
-import olumidePics from "../public/olumideIELTS.png";
+import Graduation from '../../../public/graduationcap.svg';
+import DamiPics from "../../../public/dami.png";
+import oluPics from "../../../public/olumide.png";
+import ochayiPics from "../../../public/ochayi.png";
+import temiPics from "../../../public/temi.png";
+import maryPics from "../../../public/mary.png";
+import temilehinPics from "../../../public/temilehin.png";
+import anuoluwapoPics from "../../../public/anuoluwapo.svg"
+import ayoPics from "../../../public/ayodele.png";
+import bamidelePics from "../../../public/bamidele.png";
+import adesewaPics from "../../../public/adesewa.png";
+import dayoPics from "../../../public/dayo.png";
+import busolaPics from "../../../public/busola.png";
+import natPics from "../../../public/nat.png";
+import olumidePics from "../../../public/olumideIELTS.png";
 import StudentDetailsForm from "./StudentDetailsForm";
 
 

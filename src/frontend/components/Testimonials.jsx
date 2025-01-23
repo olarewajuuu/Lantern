@@ -1,13 +1,13 @@
 import React from 'react';
 import './Testimonials.css';
-import TopDesign from './layout/header/TopDesign';
-import PeopleIcon from '../public/people.svg';
-import kazPics from "../public/kaz.png";
-import joyPics from "../public/joy.png";
-import isaacPics from "../public/isaac.png";
-import odunPics from "../public/odun.png";
-import bummiPics from "../public/bummi.png";
-import gbemiPics from "../public/gbemi.png";
+import TopDesign from '../../layout/header/TopDesign';
+import PeopleIcon from '../../../public/people.svg';
+import kazPics from "../../../public/kaz.png";
+import joyPics from "../../../public/joy.png";
+import isaacPics from "../../../public/isaac.png";
+import odunPics from "../../../public/odun.png";
+import bummiPics from "../../../public/bummi.png";
+import gbemiPics from "../../../public/gbemi.png";
 
 const testimonials = [
   {
