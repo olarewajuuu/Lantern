@@ -9,7 +9,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 
 dotenv.config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3500;
 
 connectDB();
 
