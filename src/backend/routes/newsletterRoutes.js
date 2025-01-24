@@ -1,10 +1,10 @@
 const express = require('express');
-const { submitSubscribe  } = require('../controllers/subscribeController');
+const { submitNewsletter  } = require('../controllers/newsletterController');
 
 
 const router = express.Router();
 
 // use middleware
-router.post('/', submitSubscribe);
+router.post('/', submitNewsletter);
 
 module.exports = router;

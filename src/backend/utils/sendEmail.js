@@ -1,11 +1,12 @@
 const nodemailer = require('nodemailer');
+const SMTPConnection = require('nodemailer/lib/smtp-connection');
 
 const sendEmail = async (to, subject, text) => {
     try {
         const transporter = nodemailer.createTransport({
-            host: process.env.EMAIL_HOST,
-            port: process.env.EMAIL_PORT,
-            secure: process.env.EMAIL_PORT == 465, // SSL
+            host: process.env.SMTP_HOST,
+            port: process.env.SMTP_PORT,
+            secure: process.env.SMTP_SECURE,
             auth: {
                 user: process.env.EMAIL_USERNAME,
                 pass: process.env.EMAIL_PASSWORD,
@@ -19,8 +20,8 @@ const sendEmail = async (to, subject, text) => {
             subject,
             text,
         };
-        await transporter.sendMail(mailOptions);
-        console.log('Email sent successfully to:', to);
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Email sent successfully to:', info.response);
     } catch (error) {
         console.error('Error sending email:', error.message);
         throw new Error('Failed to send email');

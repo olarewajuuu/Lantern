@@ -99,7 +99,14 @@ exports.verifyTutorEmail = async (req, res) => {
 
         // Send notification email to the tutor
         const subject = 'Email Verified Successfully';
-        const message = `Hi ${tutor.fullName},\n\nYour email has been verified successfully. You can now proceed.`;
+        const message = `
+            Hi ${tutor.fullName},
+            
+            Your email has been verified successfully. You can now proceed.
+
+            Best Regards,
+            Lantern Academy Team
+        `;
         await sendEmail(tutor.email, subject, message);
 
         // Optional: Notify admin about successful verification
@@ -112,6 +119,13 @@ exports.verifyTutorEmail = async (req, res) => {
             Email: ${tutor.email}
         `;
         await sendEmail(adminEmail, adminSubject, adminMessage);
+
+
+        // redirectoing to homepage for success verification
+        const redirectUrl = `
+            ${process.env.FRONTEND_URL}/?verified=true
+        `;
+        res.redirect(redirectUrl);
     } catch (error) {
         console.error('Error verifying email:', error.message);
         res.status(500).json({ error: 'An error occurred while verifying the email.' });
