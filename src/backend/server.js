@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const reviewRoutes = require('./routes/reviewRoutes');
 const tutorRoutes = require('./routes/tutorRoutes');
 const studentRoutes = require('./routes/studentRoutes');
-const subscribeRoutes = require('./routes/subscribeRoutes');
+const newsletterRoutes = require('./routes/newsletterRoutes');
 const cors = require('cors');
 const connectDB = require('./config/db');
 
@@ -21,7 +21,7 @@ app.use('/uploads', express.static('uploads'));
 app.use('/api/reviews', reviewRoutes);
 app.use('/api/tutors', tutorRoutes);
 app.use('/api/students', studentRoutes);
-app.use('/api/subscribe', subscribeRoutes);
+app.use('/api/newsletters', newsletterRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
