@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import Modal from "react-modal";
-Modal.setAppElement("#root");
+import Modal from "react-modal"
+Modal.setAppElement("#root")
 import logo from "/logo.svg"
 import openmenu from "/openmenu.svg"
 import closemenu from "/closemenu.svg"

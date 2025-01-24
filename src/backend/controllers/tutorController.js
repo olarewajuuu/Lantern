@@ -8,6 +8,8 @@ exports.submitTutorForm = async (req, res) => {
         const { fullName, phoneNumber, email, course, portfolio, duration, fee, uniqueInfo } = req.body;
         const { syllabusFile, cvFile } = req.files; // file upload
 
+     
+
         // Validate required fields
         if (!fullName || !phoneNumber || !email || !course || !duration || !fee || !uniqueInfo) {
             return res.status(400).json({ error: 'All required fields must be filled.' });
@@ -15,6 +17,14 @@ exports.submitTutorForm = async (req, res) => {
 
         if (!syllabusFile || !cvFile) {
             return res.status(400).json({ error: 'Both syllabus and CV files are required.' });
+        }
+
+        // Ensure multer is configured to handle these files correctly
+        const syllabusFilePath = syllabusFile[0]?.path;
+        const cvFilePath = cvFile[0]?.path;
+
+        if (!syllabusFilePath || !cvFilePath) {
+            return res.status(400).json({ error: 'File upload failed. Please try again.' });
         }
 
         // Check if the email is already registered
@@ -36,8 +46,8 @@ exports.submitTutorForm = async (req, res) => {
             duration,
             fee,
             uniqueInfo,
-            syllabusFile: syllabusFile[0].path,
-            cvFile: cvFile[0].path,
+            syllabusFile: syllabusFilePath,
+            cvFile: cvFilePath,
             isVerified: false, // Default to false until email is verified
             verificationToken, // Save the verification token
         });
@@ -46,7 +56,6 @@ exports.submitTutorForm = async (req, res) => {
 
         // Create a verification link
         const verificationLink = `${process.env.BACKEND_URL}/api/tutors/verify-email/${verificationToken}`;
-
 
         // Send email verification
         const from = process.env.TUTOR_EMAIL; // Sender email for tutors
@@ -70,12 +79,10 @@ exports.submitTutorForm = async (req, res) => {
 
         res.status(201).json({ message: 'Tutor form submitted. Please check your email to verify your account.' });
     } catch (error) {
-        console.error('Error submitting tutor form:', error.message);
+        console.error('Error submitting tutor form:', error);
         res.status(500).json({ error: 'An error occurred while submitting the form.' });
     }
 };
-
-
 
 // Verify Tutor Email
 exports.verifyTutorEmail = async (req, res) => {
@@ -113,7 +120,7 @@ exports.verifyTutorEmail = async (req, res) => {
         `;
         await sendEmail(adminEmail, adminSubject, adminMessage);
     } catch (error) {
-        console.error('Error verifying email:', error.message);
+        console.error('Error verifying email:', error);
         res.status(500).json({ error: 'An error occurred while verifying the email.' });
     }
 };
