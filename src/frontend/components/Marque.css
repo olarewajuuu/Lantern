@@ -1,10 +1,10 @@
 
-.marq marquee{
+.marque marquee{
     color: #152F56;
     margin-top: 120px;
 }
 @media screen and (max-width: 1279px) {
-    .marq marquee{
+    .marque marquee{
         margin-top: 90px;
     }
 }
