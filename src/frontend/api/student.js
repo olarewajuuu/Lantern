@@ -1,9 +1,8 @@
 export const submitStudentDetails = async (data) => {
     console.log('studentResp')
 
-    const apiUrl = 'http://localhost:5000'
     try {
-        const response = await fetch(`${apiUrl}/api/students/submit`, {
+        const response = await fetch('/api/students/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
