@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import Modal from "react-modal"
 Modal.setAppElement("#root")
 import logo from "/logo.svg"
-import fav from "/favicon.jpg"
 import openmenu from "/openmenu.svg"
 import closemenu from "/closemenu.svg"
 // mobile icons 
@@ -65,7 +64,6 @@ const Navbar = () => {
 
   return (
     <>
-    <link rel="shortcut icon" href={fav} type="image/jpg" />
     <nav className="fixed top-0 z-20 w-full bg-white shadow-md">
       <div className="container flex items-center justify-between px-6 py-4 mx-auto vlg:py-[0]">
         {/* Logo */}
