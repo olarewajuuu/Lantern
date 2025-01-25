@@ -101,8 +101,6 @@ exports.verifyTutorEmail = async (req, res) => {
         tutor.verificationToken = null; // Clear the token
         await tutor.save();
 
-        // Send a success response
-        res.status(200).json({ message: 'Email verified successfully.' });
 
         // Send notification email to the tutor
         const subject = 'Email Verified Successfully';

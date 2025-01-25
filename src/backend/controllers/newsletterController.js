@@ -1,4 +1,4 @@
-const Newsletter = require('../models/Newsletter'); // Assuming Newsletter schema is set up
+const Newsletter = require('../models/Newsletter');
 const sendEmail = require('../utils/sendEmail');
 
 exports.submitNewsletter = async (req, res) => {

@@ -7,8 +7,6 @@ exports.submitStudentDetails = async (req, res) => {
         const { fullName, phoneNumber, email, location, sponsor, selectedCourse } = req.body;
         console.log(req.body);
 
-        console.log(req.body);
-
         // Validate required fields
         if (!fullName || !phoneNumber || !email || !location || !selectedCourse) {
             return res.status(400).json({ error: 'All required fields must be filled.' });
@@ -28,54 +26,25 @@ exports.submitStudentDetails = async (req, res) => {
             location,
             sponsor: sponsor || null, // Optional field
             selectedCourse,
-<<<<<<< HEAD
-=======
-            isVerified: false, // Default to not verified
-            verificationToken, // Store the token for verification
->>>>>>> a29e777074af308b4f85a99cedaa3a39414c210c
         });
-
-       const studentSave = await student.save();
+        console.log(student);
+       await student.save();
 
         // Send verification email
-<<<<<<< HEAD
-        const studentSubject = 'Thank you for Registering with Lantern Academy';
-        const studentMessage  = `
-            Hi ${fullname},
-=======
         const from = process.env.STUDENT_EMAIL || 'no-reply@yourdomain.com'; // Fallback for sender email
         const subject = 'Please Verify Your Email';
         const message = `
-            Hi ${fullName},
             
-            Thank you for submitting your details! To complete the registration process, please verify your email by clicking the link below:
             
-            ${verificationUrl}
+            Thank you for submitting your details.
 
             Best regards,
             Lantern Academy
         `;
->>>>>>> a29e777074af308b4f85a99cedaa3a39414c210c
-
-            Thank you for registering with Lantern Academy. We are excited to have you on board.
-            We will contact you soon regarding the selected course(s).
-
-<<<<<<< HEAD
-            Details:
-            -- FullName: ${fullname}
-            -- Phone Number: ${phoneNumber}
-            -- Email: ${email}
-            -- Location: ${location}
-            -- Sponsor: ${sponsor || 'None'}
-            -- Selected Course(s): ${selectedCourse}
-
-            Best Regards,
-            Lantern Academy
-        `;
-        await sendEmail(email, studentSubject, studentMessage);
+        await sendEmail(email, subject, message, from);
 
         // Notification for admin
-        const adminEmail = process.env.STUDENT_EMAIL;
+        const adminEmail = process.env.EMAIL_USERNAME;
         const adminSubject = 'New Student Registration Submitted';
         const adminMessage = `
             A new student application has been submitted.
@@ -90,51 +59,10 @@ exports.submitStudentDetails = async (req, res) => {
         await sendEmail(adminEmail, adminSubject, adminMessage);
 
         res.status(201).json({ message: 'Student details submitted successfully.' });
-=======
-        res.status(201).json({ message: 'Student form submitted successfully. Please check your email to verify your account.' });
->>>>>>> a29e777074af308b4f85a99cedaa3a39414c210c
+
+
     } catch (error) {
         console.error('Error submitting student form:', error);
         res.status(500).json({ error: 'An error occurred while submitting the form.' });
     }
 };
-
-<<<<<<< HEAD
-=======
-// Verify Student Email
-exports.verifyStudentEmail = async (req, res) => {
-    try {
-        const { token } = req.params;
-
-        // Find the student by the verification token
-        const student = await Student.findOne({ verificationToken: token });
-
-        if (!student) {
-            return res.status(400).json({ error: 'Invalid or expired token.' });
-        }
-
-        // Mark the student as verified
-        student.isVerified = true;
-        student.verificationToken = null; // Clear the token
-        await student.save();
-
-        // Send a success response
-        res.status(200).json({ message: 'Email verified successfully!' });
-
-        // Send notification email to the student
-        const subject = 'Email Verified Successfully';
-        const message = `
-            Hi ${student.fullName},
-            
-            Your email has been verified successfully. You can now proceed to access all our services.
-
-            Best regards,
-            Lantern Academy
-        `;
-        await sendEmail(student.email, subject, message);
-    } catch (error) {
-        console.error('Error verifying email:', error);
-        res.status(500).json({ error: 'An error occurred during email verification.' });
-    }
-};
->>>>>>> a29e777074af308b4f85a99cedaa3a39414c210c
