@@ -94,7 +94,7 @@ const DesktopFooter = () => {
                     <div>
                         <h3 className="text-xl font-bold mb-4">Contact us</h3>
                         <p className="text-white mb-6">Call us: 08164790661</p>
-                        <p className="text-white mb-6">Email us: Lanterntutors@gmail.com</p>
+                        <p className="text-white mb-6">Email us: info@lantern.academy</p>
                         <p className="text-white flex">
                             Follow us:
                             <span className="ml-7"><img src={twitterlogo} alt="" /></span>
