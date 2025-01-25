@@ -10,7 +10,7 @@ import FaceShadow from "../../../public/face_shadow";
 export default function Homepage() {
   return (
     <>
-      <div className="mt-[78px] vlg:mt-[106px] bg-[#F3F1FC]">
+      <div className="bg-[#F3F1FC]">
         <div id="hero" className="flex flex-col md:max-w-[700px] mx-auto vlg:max-w-[1001px]">
           <div className="pt-[2rem] px-[1.5rem] md:pt-[3rem] md:text-center md:flex md:flex-col md:items-center ">
             <h1 className="text-darkBlue text-[2rem] leading-[44px] font-bold md:text-[2.5rem] vlg:text-[3.25rem] vlg:leading-[60.6px]">

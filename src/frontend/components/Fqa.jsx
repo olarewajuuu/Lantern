@@ -89,7 +89,7 @@ const Fqa = () => {
                     </div>
                     <div className="flex items-center space-x-2">
                         <span className="text-2xl"><img src={fqamail} alt="" /></span>
-                        <p className="text-[16px]">Email us: Lanterntutors@gmail.com</p>
+                        <p className="text-[16px]">Email us: info@lantern.academy</p>
                     </div>
                 </div>
             </div>

@@ -94,7 +94,7 @@ const StudentDetailsForm = ({ closeModal }) => {
 
           <h1 className="text-2xl font-bold text-center mb-4">Enter Your Details Here</h1>
           <p className="text-center text-gray-600 mb-6">
-            Please fill out the form below to submit your application to become a tutor.
+            Kindly fill out the form below to submit your request and start learning
           </p>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -217,7 +217,7 @@ const StudentDetailsForm = ({ closeModal }) => {
                   type="submit"
                   className="w-full lg:w-8/12 mx-auto text-center bg-gradient-to-b from-[#152F56] to-[#2E67BC] text-white py-3 rounded-[16px] hover:bg-[#3b7ad8] transition text-[18px]"
                 >
-                  Register
+                  Submit
                 </button>
               </div>
             </div>

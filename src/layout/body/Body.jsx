@@ -6,11 +6,12 @@ import ChatButton from "../../frontend/components/ChatButton";
 import Homepage from "../../frontend/components/Homepage";
 import Testimonials from "../../frontend/components/Testimonials";
 import Footer from "../footer/Footer";
+import Marque from "../../frontend/components/marque";
 
 const Body = () => {
   return (
     <div>
-
+      <Marque />
       <Homepage />
       <FindTutorPage />
       <Testimonials />
