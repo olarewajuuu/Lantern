@@ -1,11 +1,11 @@
 const Student = require('../models/Student');
-const crypto = require('crypto');
 const sendEmail = require('../utils/sendEmail');
 
 // Submit Student Details
 exports.submitStudentDetails = async (req, res) => {
     try {
         const { fullName, phoneNumber, email, location, sponsor, selectedCourse } = req.body;
+        console.log(req.body);
 
         console.log(req.body);
 
@@ -20,9 +20,6 @@ exports.submitStudentDetails = async (req, res) => {
             return res.status(400).json({ error: 'Email already exists. Please use a different email.' });
         }
 
-        // Generate email verification token
-        const verificationToken = crypto.randomBytes(32).toString('hex');
-
         // Create the student
         const student = new Student({
             fullName,
@@ -31,16 +28,21 @@ exports.submitStudentDetails = async (req, res) => {
             location,
             sponsor: sponsor || null, // Optional field
             selectedCourse,
+<<<<<<< HEAD
+=======
             isVerified: false, // Default to not verified
             verificationToken, // Store the token for verification
+>>>>>>> a29e777074af308b4f85a99cedaa3a39414c210c
         });
 
        const studentSave = await student.save();
 
-        // Create the verification URL
-        const verificationUrl = `${process.env.BACKEND_URL}/api/students/verify-email/${verificationToken}`;
-
         // Send verification email
+<<<<<<< HEAD
+        const studentSubject = 'Thank you for Registering with Lantern Academy';
+        const studentMessage  = `
+            Hi ${fullname},
+=======
         const from = process.env.STUDENT_EMAIL || 'no-reply@yourdomain.com'; // Fallback for sender email
         const subject = 'Please Verify Your Email';
         const message = `
@@ -53,16 +55,52 @@ exports.submitStudentDetails = async (req, res) => {
             Best regards,
             Lantern Academy
         `;
+>>>>>>> a29e777074af308b4f85a99cedaa3a39414c210c
 
-        await sendEmail(email, subject, message, from);
+            Thank you for registering with Lantern Academy. We are excited to have you on board.
+            We will contact you soon regarding the selected course(s).
 
+<<<<<<< HEAD
+            Details:
+            -- FullName: ${fullname}
+            -- Phone Number: ${phoneNumber}
+            -- Email: ${email}
+            -- Location: ${location}
+            -- Sponsor: ${sponsor || 'None'}
+            -- Selected Course(s): ${selectedCourse}
+
+            Best Regards,
+            Lantern Academy
+        `;
+        await sendEmail(email, studentSubject, studentMessage);
+
+        // Notification for admin
+        const adminEmail = process.env.STUDENT_EMAIL;
+        const adminSubject = 'New Student Registration Submitted';
+        const adminMessage = `
+            A new student application has been submitted.
+            
+            Name: ${fullName}
+            Email: ${email}
+            Phone: ${phoneNumber}
+            Location: ${location}
+            Sponsor: ${sponsor || 'N/A'}
+            Course: ${selectedCourse}
+        `;
+        await sendEmail(adminEmail, adminSubject, adminMessage);
+
+        res.status(201).json({ message: 'Student details submitted successfully.' });
+=======
         res.status(201).json({ message: 'Student form submitted successfully. Please check your email to verify your account.' });
+>>>>>>> a29e777074af308b4f85a99cedaa3a39414c210c
     } catch (error) {
         console.error('Error submitting student form:', error);
         res.status(500).json({ error: 'An error occurred while submitting the form.' });
     }
 };
 
+<<<<<<< HEAD
+=======
 // Verify Student Email
 exports.verifyStudentEmail = async (req, res) => {
     try {
@@ -99,3 +137,4 @@ exports.verifyStudentEmail = async (req, res) => {
         res.status(500).json({ error: 'An error occurred during email verification.' });
     }
 };
+>>>>>>> a29e777074af308b4f85a99cedaa3a39414c210c
