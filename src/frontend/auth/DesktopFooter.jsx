@@ -43,7 +43,7 @@ const DesktopFooter = () => {
     
         try {
             // Send the email to the backend
-            const response = await fetch("http://localhost:5000/api/subscribe", { 
+            const response = await fetch("https://lantern-pro.vercel.app/api/subscribe", { 
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
