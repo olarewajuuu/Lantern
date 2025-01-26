@@ -23,7 +23,7 @@ exports.submitNewsletter = async (req, res) => {
         await newSubscriber.save();
 
         // Send confirmation email to the user
-        const from = process.env.NEWSLETTER_EMAIL;
+        const from = process.env.SUBSCRIBE_EMAIL;
         const subject = 'Welcome to Lantern Academy Newsletter';
         const message = `
             Thank you for subscribing to Lantern Academy's newsletter!

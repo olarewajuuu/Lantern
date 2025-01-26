@@ -144,8 +144,8 @@ const DesktopFooter = () => {
     )
 }
 
-<<<<<<< HEAD
+
 export default DesktopFooter;
-=======
-export default DesktopFooter
->>>>>>> de9b114d194ed199c6e0facea83cd0b3ca0c708e
+
+
+
