@@ -54,7 +54,7 @@ const MobileFooter = () => {
                 <div className="mb-8">
                     <h3 className="text-xl font-bold mb-4">Contact us</h3>
                     <p className="text-white mb-2">Call us: 08164790661</p>
-                    <p className="text-white mb-2">Email us: Lanterntutors@gmail.com</p>
+                    <p className="text-white mb-2">Email us: info@lantern.academy</p>
                     <p className="text-white flex">
                                                 Follow us:
                                                 <span className="ml-7"><img src={twitterlogo} alt="" /></span>

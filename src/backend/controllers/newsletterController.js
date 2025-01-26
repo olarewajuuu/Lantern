@@ -11,7 +11,14 @@ exports.submitNewsletter = async (req, res) => {
             return res.status(400).json({ error: 'Email is required' });
         }
 
-        // Save to database
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            console.error('Invalid email format');
+            return res.status(400).json({ error: 'Please provide a valid email address' });
+        }
+
+        // Save to database (MongoDB or other DB)
         const newSubscriber = new Newsletter({ email });
         await newSubscriber.save();
 
