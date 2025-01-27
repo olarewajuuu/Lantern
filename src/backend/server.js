@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors'); // Import CORS
+const corsMiddleware = require('./cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const reviewRoutes = require('./routes/reviewRoutes');
@@ -19,6 +20,20 @@ connectDB().catch(err => {
     process.exit(1); // Exit the application if DB connection fails
 });
 
+
+// Apply CORS middleware globally
+app.use(corsMiddleware({
+  origin: 'http://example.com',
+  methods: ['GET', 'POST'],
+  headers: ['Content-Type', 'Authorization'],
+  credentials: true,
+  maxAge: 3600
+}));
+
+// Your routes here
+
+
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -29,6 +44,7 @@ app.use('/api/reviews', reviewRoutes);
 app.use('/api/tutors', tutorRoutes);
 app.use('/api/students', studentRoutes);
 app.use('/api/newsletters', newsletterRoutes);
+
 
 // Start the server
 app.listen(PORT, () => {
