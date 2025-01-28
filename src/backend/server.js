@@ -24,9 +24,7 @@ connectDB().catch(err => {
 app.use(cors({
   origin: ['https://lantern.academy'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
-  maxAge: 86400 // 24 hours
 }));
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
