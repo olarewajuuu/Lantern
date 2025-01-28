@@ -1,6 +1,6 @@
 export const subscribeToNewsletter = async (email) => {
     try {
-        const response = await fetch("/api/subscribe", {
+        const response = await fetch("/api/newsletters", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email }),
