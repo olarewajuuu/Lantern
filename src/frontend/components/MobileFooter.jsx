@@ -19,16 +19,19 @@ const MobileFooter = () => {
                 </div>
                 <div className="mb-8">
                     <p className="text-white mb-4">Subscribe to our newsletter and receive weekly free resource</p>
-                    <form className="flex flex-col space-y-2 relative">
+                    <form onSubmit={handleSubmit} className="flex flex-col space-y-2 relative">
                         <input
                             type="email"
                             placeholder="Enter your email"
                             className="px-4 py-3 rounded-[15px] text-gray-900"
+                            value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                         />
-                        <button className="px-5 py-2 bg-gradient-to-b from-[#152F56] to-[#2E67BC] rounded-full text-white absolute right-2 bottom-1 ">
+                        <button className="px-5 py-2 bg-gradient-to-b from-[#152F56] to-[#2E67BC] rounded-full text-white absolute right-2 bottom-1 " type="submit">
                             Subscribe
                         </button>
                     </form>
+                    {message && <p className="mt-2 text-sm text-red-500">{message}</p>}
                 </div>
                 <div className="mb-8">
                     <h3 className="text-xl font-bold mb-4">Quick links</h3>

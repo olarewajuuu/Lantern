@@ -436,7 +436,7 @@ const FindTutorPage = () => {
                 </div>
                 <span className="optional">(Optional)</span>
                 <textarea className="review-textarea" placeholder="Write your review here..."></textarea>
-                <button className="register-btn submit-btn">Submit</button>
+                <button className="register-btn submit-btn" type="submit">Submit</button>
               </div>
             </div>
             {/* <div className="seeAllContainer">
