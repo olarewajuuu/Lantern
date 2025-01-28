@@ -1,7 +1,8 @@
 import axios from 'axios';
 
+
 const axiosInstance = axios.create({
-    baseURL: 'https://lantern-pro.vercel.app',
+  baseURL: process.env.VITE_API_URL || 'http://localhost:5000'
 });
 
 export default axiosInstance;
