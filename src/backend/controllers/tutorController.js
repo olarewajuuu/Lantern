@@ -115,7 +115,7 @@ exports.verifyTutorEmail = async (req, res) => {
         await sendEmail(tutor.email, subject, message);
 
         // Optional: Notify admin about successful verification
-        const adminEmail = 'Lanternacademyreg@gmail.com';
+        const adminEmail = 'tutors@lantern.academy';
         const adminSubject = 'Tutor Email Verified';
         const adminMessage = `
             The following tutor has verified their email:
