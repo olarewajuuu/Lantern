@@ -1,6 +1,6 @@
 export const submitReview = async (message) => {
     try {
-        const response = await fetch('/api/reviews', {
+        const response = await fetch('https://lantern-pro.vercel.app/api/reviews', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message }),

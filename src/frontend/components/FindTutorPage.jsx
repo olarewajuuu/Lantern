@@ -19,6 +19,7 @@ import busolaPics from "../../../public/busola.png";
 import natPics from "../../../public/nat.png";
 import olumidePics from "../../../public/olumideIELTS.png";
 import StudentDetailsForm from "../auth/StudentDetailsForm";
+import { submitReview } from "../api/review";
 
 
 const tutors = [
@@ -325,14 +326,38 @@ const tutors = [
 
 const FindTutorPage = () => {
   const [ratings, setRatings] = useState(() => tutors.map(() => 0));
+  const [reviews, setReviews] = useState(() => tutors.map(() => "")); // Store reviews
 
   const handleStarClick = (index, tutorIndex) => {
-
     setRatings(prevRatings => {
       const newRatings = [...prevRatings];
       newRatings[tutorIndex] = index + 1;
       return newRatings;
     });
+  };
+
+  const handleReviewChange = (event, tutorIndex) => {
+    setReviews(prevReviews => {
+      const newReviews = [...prevReviews];
+      newReviews[tutorIndex] = event.target.value;
+      return newReviews;
+    });
+  };
+
+  const handleReviewSubmit = async (tutorIndex) => {
+    const reviewData = {
+      tutor: tutors[tutorIndex].name,
+      rating: ratings[tutorIndex],
+      message: reviews[tutorIndex], // Pass message instead of "review"
+    };
+
+    try {
+      const response = await submitReview(reviewData); // Call the submitReview function
+      alert("Review submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting review:", error);
+      alert("Failed to submit review.");
+    }
   };
 
   // StudentDetailsForm
@@ -455,8 +480,9 @@ const FindTutorPage = () => {
                   ))}
                 </div>
                 <span className="optional">(Optional)</span>
-                <textarea className="review-textarea" placeholder="Write your review here..."></textarea>
-                <button className="register-btn submit-btn">Submit</button>
+                <textarea className="review-textarea" placeholder="Write your review here..."  value={reviews[tutorIndex]}
+                  onChange={(event) => handleReviewChange(event, tutorIndex)}></textarea>
+                <button className="register-btn submit-btn"  onClick={() => handleReviewSubmit(tutorIndex)}>Submit</button>
               </div>
             </div>
             {/* <div className="seeAllContainer">
