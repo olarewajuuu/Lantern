@@ -81,7 +81,7 @@ const BecomeTutorForm = () => {
         formDataToSend.append("cvFile", formData.cvFile);
 
         // Fetch POST request
-        const response = await fetch("https://lantern-pro.vercel.app/api/tutors/submit", {
+        const response = await fetch("/api/tutors/submit", {
             method: "POST",
             body: formDataToSend, // FormData handles multipart/form-data automatically
         });
