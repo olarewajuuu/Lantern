@@ -2,8 +2,73 @@ import footerlogo from "../../../public/footerlogo.svg"
 import twitterlogo from "../../../public/twitterr.svg"
 import facebooklogo from "../../../public/facebook.svg"
 import linkedinlogo from "../../../public/linkedin.svg"
+import { useState } from "react"
+import { subscribeToNewsletter } from "../api/subscribe";
 
 const MobileFooter = () => {
+
+        const scrollToSection = (id) => {
+            const section = document.getElementById(id);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+            }
+        };
+    
+        const [email, setEmail] = useState("");
+        const [message, setMessage] = useState("");
+    
+        const validateEmail = (email) => {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        };
+    
+        const handleSubmit = async (e) => {
+            e.preventDefault();
+        
+            // Clear previous messages
+            setMessage("");
+        
+            // Validate email
+            if (!email.trim()) {
+                setMessage("Please enter an email.");
+                return;
+            }
+        
+            if (!validateEmail(email)) {
+                setMessage("Please enter a valid email address.");
+                return;
+            }
+        
+            try {
+                // Send the email to the backend
+                const response = await fetch("https://lantern-pro.vercel.app/api/newsletters", { 
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ email }),
+                });
+        
+                // Check if the response status is ok (200-299)
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    // Check if the error is in HTML (not JSON)
+                    if (errorText.includes('<html>')) {
+                        setMessage("Something went wrong. Please try again later.");
+                    } else {
+                        const error = JSON.parse(errorText);
+                        setMessage(error.error || "Oops! Something went wrong. Please try again.");
+                    }
+                } else {
+                    const result = await response.json();
+                    setMessage(result.message || "Thank you for subscribing!");
+                    setEmail(""); // Clear the email input
+                }
+            } catch (error) {
+                console.error("Error submitting email:", error);
+                setMessage("An error occurred. Please try again.");
+            }
+        };
     return (
         <footer className="lg:hidden bg-gradient-to-b from-[#3160CF] w-full to-[#264AA0] text-white py-10">
             <div className="max-w-6xl mx-auto px-6">
@@ -19,13 +84,13 @@ const MobileFooter = () => {
                 </div>
                 <div className="mb-8">
                     <p className="text-white mb-4">Subscribe to our newsletter and receive weekly free resource</p>
-                    <form onSubmit={handleSubmit} className="flex flex-col space-y-2 relative">
+                    <form  onSubmit={handleSubmit} className="flex flex-col space-y-2 relative">
                         <input
                             type="email"
                             placeholder="Enter your email"
                             className="px-4 py-3 rounded-[15px] text-gray-900"
                             value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                         <button className="px-5 py-2 bg-gradient-to-b from-[#152F56] to-[#2E67BC] rounded-full text-white absolute right-2 bottom-1 " type="submit">
                             Subscribe
@@ -36,8 +101,8 @@ const MobileFooter = () => {
                 <div className="mb-8">
                     <h3 className="text-xl font-bold mb-4">Quick links</h3>
                     <ul className="space-y-2">
-                        <li className="text-white">How to start</li>
-                        <li className="text-white">Find a tutor</li>
+                        <li onClick={() => scrollToSection("hero")} className="text-white">How to start</li>
+                        <li onClick={() => scrollToSection("courses")} className="text-white">Find a tutor</li>
                         <li className="text-white">Testimonial</li>
                         <li className="text-white">Got questions?</li>
                         <li className="text-white">Become a tutor</li>

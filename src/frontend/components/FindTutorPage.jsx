@@ -4,6 +4,7 @@ import TopDesign from "../../layout/header/TopDesign";
 import { useState } from "react";
 import Graduation from '../../../public/graduationcap.svg';
 import DamiPics from "../../../public/dami.png";
+import Solomon from "../../../public/solomon.jpg";
 import oluPics from "../../../public/olumide.png";
 import ochayiPics from "../../../public/ochayi.png";
 import temiPics from "../../../public/temi.png";
@@ -38,6 +39,25 @@ const tutors = [
       "Master HTML, CSS, and JavaScript to build visually stunning and responsive websites.",
       "Learn to work with modern front-end frameworks like React and Vue for dynamic web applications.",
       "Get skills that can lead to jobs as a front-end developer.",
+      "Earn a certificate.",
+    ],
+  },
+  {
+    heading: "Full-Stack Web Tutor",
+    name: "Solomon   ",
+    image: Solomon,
+    students: "158",
+    position: "Full-Stack Web Tutor",
+    rating: "5/5",
+    reviews: "323",
+    about:
+      "Hi, I'm Solomon, I'm a full stack web developer with more than 5 years of experience. I mentor beginners, intermediate, and advanced developers, helping them build practical skills for real-world desktop and mobile web applications",
+    course: "Full-Stack Web Development",
+    type: "online and physical classes",
+    learn: [
+      "Master HTML, CSS, and JavaScript to build visually stunning and responsive websites with frameworks",
+      "Learn about Backend Technologies of your speciality, PHP and MySQL, Django and Python, and relevant frameworks etc..",
+      "Work on real time and real life projects for concrete knowledge and expertises.",
       "Earn a certificate.",
     ],
   },
@@ -304,7 +324,7 @@ const tutors = [
 
 
 const FindTutorPage = () => {
-  const [ratings, setRatings] = useState(tutors.map(() => 0));
+  const [ratings, setRatings] = useState(() => tutors.map(() => 0));
 
   const handleStarClick = (index, tutorIndex) => {
 
@@ -393,7 +413,7 @@ const FindTutorPage = () => {
                       <defs>
                         <linearGradient id="paint0_linear_161_720" x1="7" y1="0" x2="7" y2="24" gradientUnits="userSpaceOnUse">
                           <stop stopColor="#152F56" />
-                          <stop offset="1" stop-color="#2E67BC" />
+                          <stop offset="1" stopColor="#2E67BC" />
                         </linearGradient>
                       </defs>
                     </svg>
@@ -436,7 +456,7 @@ const FindTutorPage = () => {
                 </div>
                 <span className="optional">(Optional)</span>
                 <textarea className="review-textarea" placeholder="Write your review here..."></textarea>
-                <button className="register-btn submit-btn" type="submit">Submit</button>
+                <button className="register-btn submit-btn">Submit</button>
               </div>
             </div>
             {/* <div className="seeAllContainer">
