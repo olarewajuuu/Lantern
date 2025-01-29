@@ -20,7 +20,7 @@ exports.submitReview = async (req, res) => {
 
 
         // Send notification email to Lantern Academy
-        await sendEmail('reviews@lantern.academy', 'New Review Submitted', adminEmail, subject, text);
+        await sendEmail('Lanternacademyreg@gmail.com', 'New Review Submitted', adminEmail, subject, text);
 
         res.status(201).json({ message: 'Review submitted successfully.' });
     } catch (error) {

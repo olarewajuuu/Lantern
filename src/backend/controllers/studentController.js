@@ -44,7 +44,7 @@ exports.submitStudentDetails = async (req, res) => {
         await sendEmail(email, subject, message, from);
 
         // Notification for admin
-        const adminEmail = "students@lantern.academy";
+        const adminEmail = process.env.EMAIL_USERNAME;
         const adminSubject = 'New Student Registration Submitted';
         const adminMessage = `
             A new student application has been submitted.

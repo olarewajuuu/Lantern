@@ -36,7 +36,7 @@ exports.submitNewsletter = async (req, res) => {
         const adminMessage = `A new subscription has been added. Email: ${email}`;
 
         await sendEmail(email, subject, message, from); // Send confirmation email to the user
-        await sendEmail('newsletter@lantern.academy', adminSubject, adminMessage, from); // Notify the admin
+        await sendEmail('Lanternacademyreg@gmail.com', adminSubject, adminMessage, from); // Notify the admin
 
         res.status(200).json({ message: 'Subscription submitted successfully.' });
     } catch (error) {
