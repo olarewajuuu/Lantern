@@ -22,7 +22,7 @@ connectDB().catch(err => {
 
 // Middleware
 app.use(cors({
-  origin: ['https://lantern.academy'],
+  origin: ['https://lantern.academy', 'https://lantern-pro.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
