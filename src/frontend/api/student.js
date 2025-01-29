@@ -2,7 +2,7 @@ export const submitStudentDetails = async (data) => {
     console.log('studentResp')
 
     try {
-        const response = await fetch('/api/students/submit', {
+        const response = await fetch('https://lantern-pro.vercel.app/api/students/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
