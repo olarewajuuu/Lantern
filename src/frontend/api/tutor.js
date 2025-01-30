@@ -1,16 +1,3 @@
-export default function handler(req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "https://lantern.academy");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  
-    if (req.method === "OPTIONS") {
-      return res.status(200).end(); // Handle preflight request
-    }
-  
-    // Your API logic here...
-    res.status(200).json({ message: "Success!" });
-  }
-  
 export const submitTutorForm = async (formData, syllabusFile, cvFile) => {
     try {
         const data = new FormData();
@@ -18,7 +5,7 @@ export const submitTutorForm = async (formData, syllabusFile, cvFile) => {
         data.append('syllabusFile', syllabusFile);
         data.append('cvFile', cvFile);
 
-        const response = await fetch('https://lantern-pro.vercel.app/api/tutors/submit', {
+        const response = await fetch('/api/tutors/submit', {
             method: 'POST',
             body: data,
         });
