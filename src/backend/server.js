@@ -10,22 +10,24 @@ const connectDB = require('./config/db'); // Ensure db config is correct
 
 dotenv.config();
 
-const PORT = process.env.PORT || 3500;
 
 const app = express();
 
+// Middleware
+app.use(cors({
+  origin: ['https://lantern.academy', 'https://lantern-pro.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 // Connect to database
 connectDB().catch(err => {
   console.error('Database connection failed:', err);
   process.exit(1); // Exit the application if DB connection fails
 });
 
-// Middleware
-app.use(cors({
-  origin: ['https://lantern.academy', 'https://lantern-pro.vercel.app'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-}));
+const PORT = process.env.PORT || 3500;
+
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
