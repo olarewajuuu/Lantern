@@ -41,18 +41,6 @@ app.use('/api/newsletters', newsletterRoutes);
 app.get('/', (req, res) => {
   res.send('CORS-enabled endpoint');
 });
-app.get('/api/reviews', (req, res) => {
-  res.send('CORS-enabled endpoint');
-});
-app.get('/api/tutors', (req, res) => {
-  res.send('CORS-enabled endpoint');
-});
-app.get('/api/students', (req, res) => {
-  res.send('CORS-enabled endpoint');
-});
-app.get('/api/newsletters', (req, res) => {
-  res.send('CORS-enabled endpoint');
-});
 
 // Catch-all route for undefined endpoints
 app.use((req, res, next) => {

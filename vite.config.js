@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://lantern.academy',
+        target: 'https://lantern-pro.vercel.app',
         changeOrigin: true,
         secure: false
       },

@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "proxy": "https://lantern-pro.vercel.app",
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "axios": "^1.7.9",
     "cors": "^2.8.5",
