@@ -15,7 +15,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['https://lantern.academy', 'https://lantern-pro.vercel.app'],
+  origin: 'https://lantern.academy',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -39,6 +39,18 @@ app.use('/api/newsletters', newsletterRoutes);
 
 // Default Route
 app.get('/', (req, res) => {
+  res.send('CORS-enabled endpoint');
+});
+app.get('/api/reviews', (req, res) => {
+  res.send('CORS-enabled endpoint');
+});
+app.get('/api/tutors', (req, res) => {
+  res.send('CORS-enabled endpoint');
+});
+app.get('/api/students', (req, res) => {
+  res.send('CORS-enabled endpoint');
+});
+app.get('/api/newsletters', (req, res) => {
   res.send('CORS-enabled endpoint');
 });
 
