@@ -6,7 +6,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
-  "proxy": "http://localhost:3000",
+  "proxy": "https://lantern.academy",
   "keywords": [],
   "author": "",
   "license": "ISC",
