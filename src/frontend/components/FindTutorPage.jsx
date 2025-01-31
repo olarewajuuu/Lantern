@@ -52,7 +52,7 @@ const tutors = [
     rating: "5/5",
     reviews: "323",
     about:
-      "Hi, I'm Solomon, I'm a full stack web developer with more than 5 years of experience. I mentor beginners, intermediate, and advanced developers, helping them build practical skills for real-world desktop and mobile web applications",
+      "Hi, I'm Solomon, I'm a full stack web developer with more than 5 years of experience. I mentor beginners, intermediate, and advanced developers, helping them build practical skills in desktop and mobile applications",
     course: "Full-Stack Web Development",
     type: "online and physical classes",
     learn: [
@@ -126,6 +126,7 @@ const tutors = [
     heading: "IELTS Tutors",
     name: "Olumide     ",
     image: olumidePics,
+    students: "500",
     position: "IELTS Coordinator ",
     rating: "5/5",
     reviews: "99",
