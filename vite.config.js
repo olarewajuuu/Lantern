@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
+      '/backend/api': {
+        target: 'https://lantern.academy',
         changeOrigin: true,
         secure: false
       },

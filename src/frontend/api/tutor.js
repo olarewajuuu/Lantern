@@ -5,7 +5,7 @@ export const submitTutorForm = async (formData, syllabusFile, cvFile) => {
         data.append('syllabusFile', syllabusFile);
         data.append('cvFile', cvFile);
 
-        const response = await fetch('/api/tutors/submit', {
+        const response = await fetch('/backend/api/tutors/submit', {
             method: 'POST',
             body: data,
         });
