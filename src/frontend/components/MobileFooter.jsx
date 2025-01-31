@@ -41,7 +41,7 @@ const MobileFooter = () => {
         
             try {
                 // Send the email to the backend
-                const response = await fetch("https://lantern-pro.vercel.app/api/newsletters", { 
+                const response = await fetch("/backend/api/newsletters", { 
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

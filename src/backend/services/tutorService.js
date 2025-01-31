@@ -2,7 +2,7 @@ import axiosInstance from '../api/axiosInstance';
 
 export const submitTutorForm = async (formData) => {
     try {
-        const response = await axiosInstance.post('/api/tutors/submit', formData, {
+        const response = await axiosInstance.post('/backend/api/tutors/submit', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
