@@ -55,7 +55,7 @@ exports.submitTutorForm = async (req, res) => {
         await tutor.save();
 
         // Create a verification link
-        const verificationLink = `${process.env.BACKEND_URL}/backend/api/tutors/verify-email/${verificationToken}`;
+        const verificationLink = `${process.env.BACKEND_URL}/api/tutors/verify-email/${verificationToken}`;
 
         // Send email verification
         const from = process.env.TUTOR_EMAIL; // Sender email for tutors

@@ -41,7 +41,7 @@ const MobileFooter = () => {
         
             try {
                 // Send the email to the backend
-                const response = await fetch("/backend/api/newsletters", { 
+                const response = await fetch("/api/newsletters", { 
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
